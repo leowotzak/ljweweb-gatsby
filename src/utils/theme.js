@@ -2,12 +2,12 @@ import React, { Component } from "react"
 import { Howl } from "howler"
 
 const vaderAudio = new Howl({
-  src: ["../../sounds/Darth-Vader.mp3"],
+  src: ["../../sounds/wolf.mp3"],
   volume: 0.2,
   format: ["mp3"],
 })
 const r2d2Audio = new Howl({
-  src: ["../../sounds/R2-D2.mp3"],
+  src: ["../../sounds/rooster.mp3"],
   volume: 0.2,
   format: ["mp3"],
 })
