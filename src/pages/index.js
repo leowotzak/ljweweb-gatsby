@@ -45,7 +45,7 @@ export default ({ data }) => {
         <hr className="my-3 w-25" />
         <div className="d-md-inline-flex icons-container">
           <a
-            href="https://www.github.com"
+            href="https://github.com/leowotzak"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -56,7 +56,7 @@ export default ({ data }) => {
             />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/leo-wotzak/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -67,29 +67,18 @@ export default ({ data }) => {
             />
           </a>
           <a
-            href="https://www.freecodecamp.org"
+            href="https://stackoverflow.com/users/15308389/leo-wotzak"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FontAwesomeIcon
-              icon={["fab", "free-code-camp"]}
-              className="icons fcc"
-              title="FreeCodeCamp"
-            />
-          </a>
-          <a
-            href="https://www.hackerrank.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={["fab", "hackerrank"]}
+              icon={["fab", "stack-overflow"]}
               className="icons hr"
-              title="Hackerrank"
+              title="Stack-overflow"
             />
           </a>
           <a
-            href="mailto:johndoe@gmail.com"
+            href="mailto:leojwotzak@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
