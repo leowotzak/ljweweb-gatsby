@@ -22,7 +22,7 @@ export default ({ data }) => {
         />
         {unemployed && (
           <p className="mt-2">
-            <b> Hey! I am looking for new opportunities :)</b>
+            <b>Full stack developer looking for new opportunities</b>
           </p>
         )}
         <Container className="py-0 my-0">
@@ -35,12 +35,6 @@ export default ({ data }) => {
             <span className="first-name">{firstName}</span>&nbsp;
             <span className="last-name">{lastName}</span>
           </h1>
-          <p>
-            <i>
-              {occupation} by day,&nbsp;
-              {dark ? `Imperial enforcer by night` : `Rebel scum by night`}
-            </i>
-          </p>
         </Container>
         <hr className="my-3 w-25" />
         <div className="d-md-inline-flex icons-container">

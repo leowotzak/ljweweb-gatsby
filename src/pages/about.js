@@ -49,15 +49,7 @@ export default ({ data }) => {
             ))}
           </p>
           <p className="i-5 mt-4 pt-2">
-            Hello there! My name is <b>{`${author}`}</b>. I am a&nbsp;
-            <a
-              href="https://www.dictionary.com/e/fictional-characters/padawan/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              padawan
-            </a>
-            &nbsp;
+            Hello there! My name is <b>{`${author}`}</b>. I am an aspiring&nbsp;
             <b>{occupation}</b> discovering the ways of the code. Lorem ipsum
             dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -70,10 +62,9 @@ export default ({ data }) => {
             aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
             laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-          <p className="i-5">
+          <p className="i-5" align="center">
             Check out my <Link to="/projects">projects</Link> to see what I've
-            been up to! Or check out my <Link to="/blog">blog</Link> to see
-            what's recently caught my eye!
+            been up to!
           </p>
         </article>
         <article className="w-75 m-auto">
@@ -86,7 +77,7 @@ export default ({ data }) => {
                   like what you <Link to="/resume">see</Link>, let's get
                   in&nbsp;
                   <a
-                    href="mailto:red.five@rebellion.com"
+                    href="mailto:leojwotzak@gmail.com"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
