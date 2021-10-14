@@ -1,10 +1,10 @@
 ---
-company: "Facebook"
-location: "Toronto, ON"
-position: "Full-Stack Developer Intern"
-tags: ["React", "Redux", "Docker", "Datadog"]
-startDate: "2016-05-04"
-endDate: "2016-09-01"
+company: "Epic Real Estate Partners"
+location: "Austin, TX"
+position: "Acquisitions & Asset Management Analyst"
+tags: ["Python", "Pandas", "openpyxl", "Web scraping", "ArcGIS", "Automation"]
+startDate: "2020-01-01"
+endDate: "2021-08-01"
 ---
 
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget augue commodo, rutrum enim vel, varius lorem. Ut nec sem metus.</p>
