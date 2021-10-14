@@ -18,14 +18,14 @@ export default ({ data }) => {
     author,
     occupation,
     readingList,
-    showsList,
+    movieList,
     designations,
     unemployed,
   } = data.site.siteMetadata
   const { toString } = useContext(ThemeContext)
 
   const bookLinks = readingList.map(book => MediaLink(book))
-  const showLinks = showsList.map(show => MediaLink(show))
+  const movieLinks = movieList.map(show => MediaLink(show))
 
   return (
     <PageLayout>
@@ -93,16 +93,13 @@ export default ({ data }) => {
             Here are a couple of books from my reading list:
           </h5>
           <ul style={{ fontSize: "0.9rem", listStyle: "none" }}>{bookLinks}</ul>
-          <h5 className="watch-list-title pt-4">
-            Here are a couple of shows from my watch list:
-          </h5>
-          <ul style={{ fontSize: "0.9rem", listStyle: "none" }}>{showLinks}</ul>
+          <p>
+            <i>...and</i>
+          </p>
           <h5 className="watch-list-title pt-4">
             Here are a couple of movies from my watch list:
           </h5>
-          <p>
-            <i>...waaaay too many to list.</i>
-          </p>
+          <ul style={{ fontSize: "0.9rem", listStyle: "none" }}>{movieLinks}</ul>
         </article>
       </Container>
     </PageLayout>
@@ -122,7 +119,7 @@ export const query = graphql`
           author
           link
         }
-        showsList {
+        movieList {
           title
           author
           link
