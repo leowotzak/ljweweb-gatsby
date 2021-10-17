@@ -37,6 +37,7 @@ export default ({ html, frontmatter, image }) => {
           <p
             className="text-justify mt-2"
             dangerouslySetInnerHTML={{ __html: html }}
+            style={{ paddingRight: "25px"}}
           />
         </Col>
       </Row>
