@@ -7,14 +7,18 @@ startDate: "2020-01-01"
 endDate: "2021-08-01"
 ---
 
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget augue commodo, rutrum enim vel, varius lorem. Ut nec sem metus.</p>
+* Responsible for performing quarterly valuations, cash flow and IRR projections for the entire 18 asset, $500MM AUM portfolio of grocery-anchored retail assets</p>
 
-* Cras laoreet, metus consectetur mollis consectetur, dui ante tempus ante, eget luctus felis odio sed leo.</p>
+* Effectively evaluated and analyzed property, and portfolio-level refinances, which resulted in continuous company development</p>
 
-* Sed tempus, ex ultrices porttitor fringilla, enim tellus dictum elit, quis viverra odio orci eu erat. Maecenas auctor ultrices ornare. Mauris consequat a urna in cursus.</p>
+* Underwrote potential deals and took approved assets through the acquisition process – including in-depth financial modeling using specific partnership waterfalls, debt analysis, market research, original strategy development and due diligence</p>
 
-* Mauris hendrerit, sem sit amet dapibus ultrices, lacus quam malesuada lorem, interdum lacinia tortor augue maximus mauris.</p>
+* Updated all marketing materials for both current investors as well as possible joint ventures and larger fund partnerships</p>
 
-* Aliquam ultrices, lectus ac semper dictum, nisi eros sollicitudin purus, nec pharetra massa diam eu libero. Integer at metus vitae urna placerat vehicula. Donec ut sagittis risus, sed mattis mi.</p>
+* Spearheaded $35MM worth of accretive property refinances including analyzing debt offerings, populating estoppels and SNDA’s, ordering all third-party reports, reviewing all legal documents, as well as coordinating the due diligence and closing</p>
 
-* Donec suscipit, ex vitae finibus faucibus, nisl est eleifend justo, quis porta ante massa sed arcu. Morbi dapibus, massa sit amet posuere porta, sapien tellus malesuada ipsum, et vehicula nunc diam vel lacus. Donec fringilla viverra massa vitae aliquet.</p>
+* Demonstrated knowledge and adeptness in interpreting and summarizing key commercial lease terms, resulting in productivity</p>
+
+* Designed, maintained, and edited all company site plans and illustrations to improve the external presentation of the company</p>
+
+* Displayed expertise in building and maintaining sale comp datasets to quickly calculate the current market value of portfolio assets</p>
