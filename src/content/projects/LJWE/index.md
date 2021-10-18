@@ -1,6 +1,6 @@
 ---
 title: "LJWE"
-tags: ["Python", "SQL", "Quantitative finance", "Statistical analysis", "Trading", "Algorithmic trading", "Investment analysis", "Portfolio Management"]
+tags: ["Python", "SQL", "Quantitative finance", "Statistical analysis", "Trading", "Algorithmic trading", "Investment analysis", "Portfolio management"]
 date: "2021-06-17"
 ---
 
