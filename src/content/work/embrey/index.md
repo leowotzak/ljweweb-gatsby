@@ -7,14 +7,12 @@ startDate: "2018-08-01"
 endDate: "2020-01-01"
 ---
 
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget augue commodo, rutrum enim vel, varius lorem. Ut nec sem metus.</p>
+* Underwrote and analyzed institutional grade multifamily developments in Sunbelt and Mountain West markets, leading to efficiency.</p>
 
-* Cras laoreet, metus consectetur mollis consectetur, dui ante tempus ante, eget luctus felis odio sed leo.</p>
+* Created complex development and financial acquisition models, including multiple partnership structures and multi-tiered waterfalls.</p>
 
-* Sed tempus, ex ultrices porttitor fringilla, enim tellus dictum elit, quis viverra odio orci eu erat. Maecenas auctor ultrices ornare. Mauris consequat a urna in cursus.</p>
+* Monitored debt and equity draws, estimated potential operating shortfalls and reallocated funds to minimize chance of a capital call. </p>
 
-* Mauris hendrerit, sem sit amet dapibus ultrices, lacus quam malesuada lorem, interdum lacinia tortor augue maximus mauris.</p>
+* Successfully performed and executed market research into current and potential new development markets, leading to efficiency.</p>
 
-* Aliquam ultrices, lectus ac semper dictum, nisi eros sollicitudin purus, nec pharetra massa diam eu libero. Integer at metus vitae urna placerat vehicula. Donec ut sagittis risus, sed mattis mi.</p>
-
-* Donec suscipit, ex vitae finibus faucibus, nisl est eleifend justo, quis porta ante massa sed arcu. Morbi dapibus, massa sit amet posuere porta, sapien tellus malesuada ipsum, et vehicula nunc diam vel lacus. Donec fringilla viverra massa vitae aliquet.</p>
+* Drafted investment committee presentations to authorize further investment into potential developments, resulting in proficiency.</p>

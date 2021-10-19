@@ -7,10 +7,11 @@ export default ({ excerpt, featuredImages, tags, title, to }) => {
   return (
     <Container className="text-center">
       <Link to={to} style={{ textDecoration: "none" }}>
-        <Row>
+
+        <Row style={{alignItems: "center"}}>
           {featuredImages &&
             featuredImages.map(image => (
-              <Col key={image.src}>
+              <Col key={image.src} style={{maxWidth: "400px"}}>
                 <Img fluid={image} className="m-auto w-75" />
               </Col>
             ))}

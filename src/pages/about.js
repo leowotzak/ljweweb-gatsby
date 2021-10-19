@@ -10,7 +10,7 @@ export default ({ data }) => {
       <a rel="noopener noreferrer" href={link}>
         {title}
       </a>
-      &nbsp;-<i>{author}</i>
+      &nbsp;- <i>{author}</i>
     </li>
   )
 
@@ -49,20 +49,14 @@ export default ({ data }) => {
             ))}
           </p>
           <p className="i-5 mt-4 pt-2">
-            Hello there! My name is <b>{`${author}`}</b>. I am an aspiring&nbsp;
-            <b>{occupation}</b> discovering the ways of the code. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.
+            Hello! My name is <b>{`${author}`}</b>. I am a self-taught&nbsp;
+            <b>{occupation}</b> with
+            demonstrated experience designing, developing, and implementing
+            applications and solutions using a range of technologies and
+            languages. I seek to leverage my development experience and hands-on technical
+            expertise in a challenging role as a <b>{occupation}</b>.
           </p>
-          <p className="i-5">
-            In my spare time, Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-          <p className="i-5" align="center">
+          <p align="center">
             Check out my <Link to="/projects">projects</Link> to see what I've
             been up to!
           </p>
@@ -92,14 +86,14 @@ export default ({ data }) => {
           <h5 className="watch-list-title pt-4">
             Here are a couple of books from my reading list:
           </h5>
-          <ul style={{ fontSize: "0.9rem", listStyle: "none" }}>{bookLinks}</ul>
-          <p>
+          <ul style={{ fontSize: "0.9rem", listStyle: "none", paddingLeft: 0 }}>{bookLinks}</ul>
             <i>...and</i>
-          </p>
           <h5 className="watch-list-title pt-4">
             Here are a couple of movies from my watch list:
           </h5>
-          <ul style={{ fontSize: "0.9rem", listStyle: "none" }}>{movieLinks}</ul>
+          <ul style={{ fontSize: "0.9rem", listStyle: "none", paddingLeft: 0 }}>
+            {movieLinks}
+          </ul>
         </article>
       </Container>
     </PageLayout>
