@@ -8,7 +8,7 @@ export default ({ excerpt, featuredImages, tags, title, to }) => {
     <Container className="text-center">
       <Link to={to} style={{ textDecoration: "none" }}>
 
-        <Row>
+        <Row style={{alignItems: "center"}}>
           {featuredImages &&
             featuredImages.map(image => (
               <Col key={image.src} style={{maxWidth: "400px"}}>
