@@ -13,27 +13,27 @@ const SubTitle = ({ tags }) => (
   </div>
 )
 
-export default ({ data }) => {
-  const post = data.markdownRemark
-  return (
-    <PostTemplate
-      title={post.frontmatter.title}
-      subTitle={<SubTitle tags={post.frontmatter.tags} />}
-      excerpt={post.excerpt}
-      html={post.html}
-    />
-  )
-}
+// export default ({ data }) => {
+//   const post = data.markdownRemark
+//   return (
+//     <PostTemplate
+//       title={post.frontmatter.title}
+//       subTitle={<SubTitle tags={post.frontmatter.tags} />}
+//       excerpt={post.excerpt}
+//       html={post.html}
+//     />
+//   )
+// }
 
-export const query = graphql`
-  query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title
-        tags
-      }
-      excerpt
-    }
-  }
-`
+// export const query = graphql`
+//   query($slug: String!) {
+//     markdownRemark(fields: { slug: { eq: $slug } }) {
+//       html
+//       frontmatter {
+//         title
+//         tags
+//       }
+//       excerpt
+//     }
+//   }
+// `

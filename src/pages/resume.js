@@ -6,7 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Container from "react-bootstrap/Container"
 
 export default ({ data }) => {
-  const history = data.allMarkdownRemark.edges || []
+  // const history = data.allMarkdownRemark.edges || []
+  const history = data.allMdx.edges || []
   const images = data.allFile.edges || []
   const imageMap = Utils.getImageMap(images, /\/[work].*\/|$/)
   return (
@@ -27,7 +28,7 @@ export default ({ data }) => {
           <div key={node.id}>
             <WorkHistory
               frontmatter={node.frontmatter}
-              image={imageMap[node.fields.slug]}
+              image={imageMap[node.slug]}
               html={node.html}
             />
             <hr className="w-75" />
@@ -40,28 +41,6 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/work/" } }
-      sort: { fields: [frontmatter___startDate], order: DESC }
-    ) {
-      edges {
-        node {
-          id
-          html
-          frontmatter {
-            company
-            location
-            position
-            tags
-            startDate(formatString: "MMMM, YYYY")
-            endDate(formatString: "MMMM, YYYY")
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
     allFile(
       filter: {
         extension: { eq: "png" }
@@ -80,5 +59,47 @@ export const query = graphql`
         }
       }
     }
+    allMdx(
+      filter: { 
+        fileAbsolutePath: {regex: "/content/work/"}
+      }) { 
+      edges {
+        node {
+          id
+          slug
+          excerpt
+          body
+          frontmatter {
+            date(formatString: "DD MMMM, YYYY")
+            tags
+            title
+          }
+        }
+      }
+    }
   }
 `
+
+
+// allMarkdownRemark(
+//   filter: { fileAbsolutePath: { regex: "/work/" } }
+//   sort: { fields: [frontmatter___startDate], order: DESC }
+// ) {
+//   edges {
+//     node {
+//       id
+//       html
+//       frontmatter {
+//         company
+//         location
+//         position
+//         tags
+//         startDate(formatString: "MMMM, YYYY")
+//         endDate(formatString: "MMMM, YYYY")
+//       }
+//       fields {
+//         slug
+//       }
+//     }
+//   }
+// }
