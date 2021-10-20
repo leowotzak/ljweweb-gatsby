@@ -77,22 +77,36 @@ module.exports = {
     },
     `gatsby-plugin-sass`,
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: "gatsby-plugin-page-creator",
       options: {
-        plugins: [
-          `gatsby-remark-relative-images`,
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 200,
-              linkImagesToOriginal: false,
-              sizeByPixelDensity: true,
-              showCaptions: true
-            }
-          },
-        ]
-      }
+        path: `${__dirname}/src/content`,
+      },
     },
+    `gatsby-plugin-mdx-frontmatter`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+      },
+    },
+    // {
+    //   resolve: `gatsby-transformer-remark`,
+    //   options: {
+    //     plugins: [
+    //       `gatsby-remark-relative-images`,
+    //       {
+    //         resolve: `gatsby-remark-images`,
+    //         options: {
+    //           maxWidth: 200,
+    //           linkImagesToOriginal: false,
+    //           sizeByPixelDensity: true,
+    //           showCaptions: true
+    //         }
+    //       },
+    //     ]
+    //   }
+    // },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
