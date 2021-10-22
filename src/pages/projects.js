@@ -17,10 +17,9 @@ export default ({ data }) => {
   return (
     <PageLayout>
       <SEO title="Projects" />
-      <PageTitle title="Projects" >
-        <br />
+      <PageTitle title="Projects" />
       <StaticImage src="./projects.png" alt="Projects" />
-      </PageTitle>
+
       <Container className="text-left">
         <section>
 
@@ -28,7 +27,7 @@ export default ({ data }) => {
             <div key={node.id} className="p-3">
               <ProjectLink
                 to={path.basename(node.slug)}
-                featuredImages={Object.entries(featuredImageMap).filter(([k, v]) => RegExp(node.slug).test(k))}
+                featuredImages={featuredImageMap[node.slug.replace(/\/+$/, '')]}
                 title={node.frontmatter.title}
                 tags={node.frontmatter.tags}
                 excerpt={node.excerpt}
@@ -66,7 +65,7 @@ export const query = graphql`
               ...GatsbyImageSharpFluid
             }
           }
-          relativePath
+          relativeDirectory
         }
       }
     }

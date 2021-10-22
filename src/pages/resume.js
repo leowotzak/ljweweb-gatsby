@@ -29,7 +29,7 @@ export default ({ data }) => {
           <div key={node.id}>
             <WorkHistory
               frontmatter={node.frontmatter}
-              image={imageMap['content/work/epic/company.png']}
+              image={imageMap[node.slug.replace(/\/+$/, '')]}
               body={node.body}
             />
             <hr className="w-75" />
@@ -56,7 +56,7 @@ export const query = graphql`
               ...GatsbyImageSharpFluid
             }
           }
-          relativePath
+          relativeDirectory
         }
       }
     }
