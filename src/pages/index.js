@@ -13,6 +13,7 @@ export default ({ data }) => {
     <PageLayout>
       <SEO title="Home" />
       <Container className="text-center pt-5 mt-5" fluid>
+
         <Image
           width="150"
           height="150"
@@ -26,15 +27,23 @@ export default ({ data }) => {
           </p>
         )}
         <Container className="py-0 my-0">
+          <Row>
+            <Col className="d-flex" style={{flexDirection: "column", alignItems: "center"}}>
+              <Row>
           <h1
             style={{
               fontSize: "5rem",
               color: "black",
             }}
           >
+            <Col xs={6}>
             <span className="first-name">{firstName}</span>&nbsp;
             <span className="last-name">{lastName}</span>
+            </Col>
           </h1>
+          </Row>
+            </Col>
+          </Row>
         </Container>
         <hr className="my-3 w-25" />
         <div className="d-md-inline-flex icons-container">
