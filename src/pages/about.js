@@ -49,9 +49,8 @@ export default ({ data }) => {
             ))}
           </p>
           <p className="i-5 mt-4 pt-2">
-            Hello! My name is <b>{`${author}`}</b>. I am a self-taught&nbsp;
-            <b>{occupation}</b> with
-            demonstrated experience designing, developing, and implementing
+            Hello! My name is <b>{`${author}`}</b>. I am an experienced&nbsp;
+            <b>{occupation}</b> with a proven track record of designing, developing, and implementing
             applications and solutions using a range of technologies and
             languages. I seek to leverage my development experience and hands-on technical
             expertise in a challenging role as a <b>{occupation}</b>.
