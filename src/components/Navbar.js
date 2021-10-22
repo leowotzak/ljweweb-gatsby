@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import ThemeContext from "../utils/theme"
-import { Navbar, Nav, Form } from "react-bootstrap"
+import { Navbar, Nav, Form, Row, Col, Container } from "react-bootstrap"
 import { Link } from "gatsby"
 import "./Fontawesome.js"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -9,6 +9,9 @@ export default () => {
   const { dark, toggleDark, toString } = useContext(ThemeContext)
   return (
     <Navbar variant={toString()} fixed="top" collapseOnSelect expand="md">
+      <Col xs={1}>
+      </Col>
+      <Col style={{direction: 'flex', flexDirection: "column", alignItems: 'center'}}>
       <Navbar.Brand className="pl-5 ml-5" as={Link} to="/">
       <FontAwesomeIcon
           icon={["fas", "home"]}
@@ -16,6 +19,7 @@ export default () => {
           title="Home"
         />
       </Navbar.Brand>
+      </Col>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse
         id="responsive-navbar-nav"
