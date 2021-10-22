@@ -37,9 +37,6 @@ export default ({ data }) => {
             </div>
           ))}
 
-
-
-
           {/* {allProjects.map(({ node }) => (
             <div key={node.id} className="p-3">
               <ProjectLink
@@ -60,15 +57,11 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allFile(
-      filter: {
-        extension: { eq: "png" }
-        relativeDirectory: { regex: "/content/projects/" }
-      }
-    ) {
+    allFile(filter: {extension: {eq: "png"}, relativeDirectory: {regex: "/content/projects/"}}) {
       edges {
         node {
           childImageSharp {
+            id
             fluid(maxWidth: 200) {
               ...GatsbyImageSharpFluid
             }
@@ -82,21 +75,17 @@ export const query = graphql`
         ...GatsbyImageSharpFixed
       }
     }
-    allMdx(
-      filter: { 
-        fileAbsolutePath: {regex: "/content/projects/"}
-      }) { 
+    allMdx(filter: {fileAbsolutePath: {regex: "/content/projects/"}}) {
       edges {
         node {
-          id
-          slug
-          excerpt
           body
+          excerpt
           frontmatter {
-            date(formatString: "DD MMMM, YYYY")
-            tags
             title
+            tags
           }
+          slug
+          id
         }
       }
     }
