@@ -9,7 +9,8 @@ export default ({ data }) => {
   // const history = data.allMarkdownRemark.edges || []
   const history = data.allMdx.edges || []
   const images = data.allFile.edges || []
-  const imageMap = Utils.getImageMap(images, /\/[work].*\/|$/)
+  const imageMap = Utils.getImageMap(images, /^(.+)\/([^\/]+)$/)
+  
   return (
     <PageLayout>
       <SEO title="Resume" />
@@ -28,8 +29,8 @@ export default ({ data }) => {
           <div key={node.id}>
             <WorkHistory
               frontmatter={node.frontmatter}
-              image={imageMap[node.slug]}
-              html={node.html}
+              image={imageMap['content/work/epic/company.png']}
+              body={node.body}
             />
             <hr className="w-75" />
           </div>
@@ -69,8 +70,15 @@ export const query = graphql`
           slug
           excerpt
           body
+          internal {
+            content
+          }
           frontmatter {
-            date(formatString: "DD MMMM, YYYY")
+            company
+            endDate(formatString: "MMMM, YYYY")
+            startDate(formatString: "MMMM, YYYY")
+            location
+            position
             tags
             title
           }
