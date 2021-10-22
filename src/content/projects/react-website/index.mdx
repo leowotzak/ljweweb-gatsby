@@ -1,19 +1,35 @@
 ---
-title: "LJWE"
-tags: ["Python", "SQL", "Quantitative finance", "Statistical analysis", "Trading", "Algorithmic trading", "Investment analysis", "Portfolio management"]
+title: "React Website"
+tags: ["React", "JavaScript", "Python", "Bootstrap", "Flask", "SCSS", "Docker", "SQL", "REST"]
 date: "2021-06-17"
 ---
+import ProjectPageLayout from "../../../templates/projects-post";
+export default ProjectPageLayout;
 
-LJWE is an algorithmic and quantitative analysis library built to aid finance professionals with the analysis, underwriting, and execution of algorithmic and quantitative trading strategies. The library provides a data handler interface to handle multiple data sources and comes equipped with a lightweight back testing/calculation engine that takes these data sources and simulates historical trades with a provided set of parameters. Results are outputted as a dataframe and visualized through pyfolio for strategy-level analysis. The system is built to run through the python interpreter, because I want to be able to apply multiple interfaces to the project.
+The primary purpose of this project was to serve as my personal portfolio website. Since then, I have redone the front end using gatsby.js.
 
-The system has numerous capabilities, but the core features are as follows:
 
-* Run quantitative analytics on certain assets
-* Ability to easily create and implement trading algorithms
-* Ability to apply overarching portfolio-level logic to groups of trading algorithms
-* Lightweight back testing engine
-* Live trading capabilities
-* Advanced portfolio analytics from pyfolio
-* Database setup and management
+#### Front End  
 
-This is a passion project of mine, and I try to apply new programming/design concepts within this context to help me better understand them. It has also served as a helpful way for me to channel my past experience in the investment industry into an applied project. I intend to use this system for my personal trading decisions.
+The front end is fairly straightforward. Theres a title line & some social links then theres a set of tabs that contain an about me page, a projects page, and a contact me page.
+
+[See live demo](https://hungry-shirley-bd8024.netlify.app/)
+
+* Front-end constructed with _**React**_, _**Javascript**_, _**HTML**_, _**CSS**_, and _**SCSS**_
+* Utilizes [**React**](<https://reactjs.org/>), [**React-Bootstrap**](https://react-bootstrap.github.io/), [**React Router**](https://reactrouter.com/), [**react-social-icons**](https://www.npmjs.com/package/react-social-icons), [**node-sass**](https://www.npmjs.com/package/node-sass)
+* Dockerized in own container with nginx on `port 80`  
+* Redirects back end requests to `port 5000`
+* About me, projects, and contact me pages
+* Containerized using Docker
+* Validation on contact me form
+
+#### Back End
+
+The back end written for the first iteration of my personal portfolio website. It is relatively simple, in that it only has a simple database model for users of the contact me form and a single endpoint that sends an email notification once someone submits the contact me form. The server launches using Docker.
+
+* Contact me endpoint (/contact)
+* Receives requests from front end through docker container
+* Utilizes [_**Flask**_](<https://github.com/pallets/flask>), [_**Flask-SQLAlchemy**_](<https://flask-sqlalchemy.palletsprojects.com/en/2.x/>), [_**Flask-Mail**_](<https://pythonhosted.org/Flask-Mail/>), [_**Flask-Migrate**_](<https://flask-migrate.readthedocs.io/en/latest/>), [_**marshmallow**_](<https://marshmallow.readthedocs.io/en/stable/>), [_**gunicorn**_](<https://gunicorn.org/>)
+* Visitor database model to track users who have submitted contact me forms
+* Setup file and database initialization
+* Containerized with Docker on `port 5000`
