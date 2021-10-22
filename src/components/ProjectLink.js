@@ -20,15 +20,20 @@ const ComponentSkinny = ({images}) => {
 
 
 const ImageComponent = ({images}) => {
-  const [isDesktop, setDesktop] = useState(window.innerWidth > 1450)
+
+  const isBrowser = typeof window !== "undefined"
+  const [isDesktop, setDesktop] = useState(isBrowser && window.innerWidth > 1450)
+
 
   const updateMedia = () => {
-    setDesktop(window.innerWidth > 1450);
+    setDesktop(isBrowser && window.innerWidth > 1450);
   };
 
   useEffect(() => {
-    window.addEventListener("resize", updateMedia)
-    return () => window.removeEventListener("resize", updateMedia)
+    if (isBrowser) {
+      window.addEventListener("resize", updateMedia)
+      return () => window.removeEventListener("resize", updateMedia)
+    }
   });
 
   return (isDesktop ? <ComponentWide images={images} /> : <ComponentSkinny images={images} />);
