@@ -1,7 +1,7 @@
 {
-  "name": "john-doe-starter-site",
+  "name": "Leo J. Wotzak",
   "private": true,
-  "description": "A personal site built on the bare-bones starter for Gatsby",
+  "description": "Personal portfolio website created using Gatsby",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {

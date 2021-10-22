@@ -9,7 +9,7 @@ module.exports = {
   siteMetadata: {
     title: `Leo J. Wotzak`,
     author: `Leo J. Wotzak`,
-    firstName: `Leo J.`,
+    firstName: `Leo`,
     lastName: `Wotzak`,
     description: `Leo Wotzak's personal website`,
     occupation: `Full Stack Developer`,
@@ -27,7 +27,7 @@ module.exports = {
     unemployed: true,
     designations: [
       `Full stack developer`,
-      `Self-taught programmer`,
+      `Experienced programmer`,
       `Finance & trading enthusiast`,
     ],
     readingList: [
