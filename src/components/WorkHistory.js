@@ -38,7 +38,7 @@ export default ({ body, frontmatter, image }) => {
         <Col className="col-md-4 col-12">
           <CompanyCard frontmatter={frontmatter} image={image} />
         </Col>
-        <Col className="col-md-8 col-12">
+        <Col style={{textAlign: "left"}}>
           <MDXRenderer>{body}</MDXRenderer>
         </Col>
       </Row>
