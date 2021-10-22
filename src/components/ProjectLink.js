@@ -1,12 +1,40 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { Container, Badge, Col, Row } from "react-bootstrap"
 
+const ComponentWide = ({images}) => {
+  console.log("wide: ", images)
+
+  return (
+  images.map(image => (<Img fluid={image} className="m-auto w-75" />)))
+}
+
+const ComponentSkinny = ({images}) => {
+  console.log("skinny: ", images)
+
+  return(
+    <Img fluid={images[0]} className="m-auto w-75" />
+  )
+}
+
+
+const ImageComponent = ({images}) => {
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 1450)
+
+  const updateMedia = () => {
+    setDesktop(window.innerWidth > 1450);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateMedia)
+    return () => window.removeEventListener("resize", updateMedia)
+  });
+
+  return (isDesktop ? <ComponentWide images={images} /> : <ComponentSkinny images={images} />);
+}
+
 export default ({ excerpt, featuredImages, tags, title, to }) => {
-
-  featuredImages = featuredImages.map(([key, value]) => value)
-
   return (
     <Container className="text-center">
       <Link to={to} style={{ textDecoration: "none" }}>
@@ -15,12 +43,7 @@ export default ({ excerpt, featuredImages, tags, title, to }) => {
         <h2 className="mt-5">{title}</h2>
       </Link>
       <Row style={{alignItems: "center"}}>
-      {featuredImages &&
-  featuredImages.map(image => (
-    <Col key={image.src} style={{maxWidth: "400px"}}>
-      <Img fluid={image} className="m-auto w-75" />
-    </Col>
-  ))}
+        <ImageComponent images={featuredImages}/>
       </Row>
       {tags.map(tag => (
         <Badge key={tag} pill variant="dark" className="px-2 mr-1">
@@ -31,8 +54,3 @@ export default ({ excerpt, featuredImages, tags, title, to }) => {
     </Container>
   )
 }
-
-
-
-
-
