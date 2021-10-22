@@ -11,8 +11,7 @@ export default ({ data }) => {
   // const allProjects = data.allMarkdownRemark.edges || []
   const newProjects = data.allMdx.edges || []
   const allFeaturedImages = data.allFile.edges || []
-
-  const regex = /\/[projects].*\/|$/
+  const regex = /^(.+)\/([^\/]+)$/
   const featuredImageMap = Utils.getImageMap(allFeaturedImages, regex, true, 3)
 
   return (
@@ -29,7 +28,7 @@ export default ({ data }) => {
             <div key={node.id} className="p-3">
               <ProjectLink
                 to={path.basename(node.slug)}
-                // featuredImages={featuredImageMap[node.fields.slug]}
+                featuredImages={Object.entries(featuredImageMap).filter(([k, v]) => RegExp(node.slug).test(k))}
                 title={node.frontmatter.title}
                 tags={node.frontmatter.tags}
                 excerpt={node.excerpt}
