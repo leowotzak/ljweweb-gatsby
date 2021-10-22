@@ -82,10 +82,19 @@ module.exports = {
         path: `${__dirname}/src/content`,
       },
     },
+    `gatsby-remark-images`,
     `gatsby-plugin-mdx-frontmatter`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 500,              
+            },
+          },
+        ],
         extensions: [`.mdx`, `.md`],
       },
     },
