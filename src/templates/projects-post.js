@@ -1,11 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
-import PostTemplate from "./post-template"
 import { Badge, Container, Row, Col } from "react-bootstrap";
-import { StaticImage } from "gatsby-plugin-image";
-import Img from "gatsby-image";
-
-
 
 const projectTitle = ({frontmatter}) => (
   <Row className="mt-5">

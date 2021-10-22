@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import ThemeContext from "../utils/theme"
 import { PageLayout } from "../components"
 import { SEO } from "../utils"
-import { Container, Image } from "react-bootstrap"
+import { Container, Row, Col, Image } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export default ({ data }) => {
