@@ -201,3 +201,9 @@ p {
     color: themed("textColor");
   }
 }
+
+li {
+  @include themify($themes) {
+    color: themed("textColor");
+  }
+}
