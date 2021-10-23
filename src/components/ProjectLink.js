@@ -22,20 +22,15 @@ const ComponentSkinny = ({images}) => {
 
   return(
     <Row>
+      <Col className="d-flex flex-column align-items-center">
       <AliceCarousel autoPlay autoPlayInterval="3000">
-      <Col align="center">
-     <img height="100%" src="https://www.designbust.com/download/1038/png/transparent_google_logo256.png" className="sliderimg" alt="project_photo"/>
-     </Col>
+     <img src="https://www.designbust.com/download/1038/png/transparent_google_logo256.png" className="sliderimg" alt="project_photo"/>
 
-     <Col align="center">
-     <img height="100%" src="https://logoeps.com/wp-content/uploads/2014/09/49354-facebook-logo-icon-vector-icon-vector-eps.png" className="sliderimg" alt="project_photo"/>
-     </Col>
+     <img src="https://logoeps.com/wp-content/uploads/2014/09/49354-facebook-logo-icon-vector-icon-vector-eps.png" className="sliderimg" alt="project_photo"/>
 
-     <Col align="center">
-     <img height="100%" src="https://images.vexels.com/media/users/3/137380/isolated/lists/1b2ca367caa7eff8b45c09ec09b44c16-instagram-icon-logo.png" className="sliderimg" alt="project_photo"/>
-     </Col>
+     <img src="https://images.vexels.com/media/users/3/137380/isolated/lists/1b2ca367caa7eff8b45c09ec09b44c16-instagram-icon-logo.png" className="sliderimg" alt="project_photo"/>
       </AliceCarousel> 
-
+      </Col>
       </Row>
   )
 }
@@ -64,14 +59,14 @@ const ImageComponent = ({images}) => {
 export default ({ excerpt, featuredImages, tags, title, to }) => {
   return (
     <Container fluid>
-      <Row align="center">
+      <Row >
         <Col >
       <Link to={to} style={{ textDecoration: "none" }}>
         <h2 className="mt-5">{title}</h2>
       </Link>
       </Col>
       </Row>
-      <ImageComponent images={featuredImages} />
+        <ImageComponent images={featuredImages} />
       <Row align="center">
         <Col align="center">
       {tags.map(tag => (

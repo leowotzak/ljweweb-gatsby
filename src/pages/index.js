@@ -29,18 +29,16 @@ export default ({ data }) => {
           <Row>
             <Col className="d-flex" style={{flexDirection: "column", alignItems: "center"}}>
               <Row>
-          {/* <h1
+          <h1
             style={{
-              fontSize: "5rem",
+              fontSize: "3.5rem",
               color: "black",
             }}
-          > */}
-            <Row>
-            <Col xs={12} sm={6}>
+          >
             <span className="first-name">{firstName}</span>&nbsp;
             <span className="last-name">{lastName}</span>
-            </Col>
-            </Row>
+            </h1>
+
           </Row>
             </Col>
           </Row>
