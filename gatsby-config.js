@@ -83,7 +83,6 @@ module.exports = {
       },
     },
     `gatsby-remark-images`,
-    `gatsby-plugin-mdx-frontmatter`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
