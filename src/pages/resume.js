@@ -9,7 +9,7 @@ export default ({ data }) => {
   // const history = data.allMarkdownRemark.edges || []
   const history = data.allMdx.edges || []
   const images = data.allFile.edges || []
-  const imageMap = Utils.getImageMap(images, /^(.+)\/([^\/]+)$/)
+  const imageMap = Utils.getImageMap(images, /^(.+)\/([^]+)$/)
   
   return (
     <PageLayout>
@@ -24,7 +24,7 @@ export default ({ data }) => {
           />
         </a>
       </PageTitle>
-      <Container className="mt-5 pt-3" fluid>
+      <Container className="mt-5" fluid>
         {history.map(({ node }) => (
           <div key={node.id}>
             <WorkHistory

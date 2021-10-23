@@ -6,7 +6,6 @@ import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 
 const ComponentWide = ({images}) => {
-  console.log("wide: ", images)
 
   return (
     <Row xs={1} md={3}>
@@ -20,21 +19,23 @@ const ComponentWide = ({images}) => {
 }
 
 const ComponentSkinny = ({images}) => {
-  console.log("skinny: ", images)
 
   return(
     <Row>
       <AliceCarousel autoPlay autoPlayInterval="3000">
-        <Col align="center">
-     <img src="https://www.designbust.com/download/1038/png/transparent_google_logo256.png" className="sliderimg" alt="project_photo"/>
+      <Col align="center">
+     <img height="100%" src="https://www.designbust.com/download/1038/png/transparent_google_logo256.png" className="sliderimg" alt="project_photo"/>
      </Col>
+
      <Col align="center">
-     <img src="https://logoeps.com/wp-content/uploads/2014/09/49354-facebook-logo-icon-vector-icon-vector-eps.png" className="sliderimg" alt="project_photo"/>
+     <img height="100%" src="https://logoeps.com/wp-content/uploads/2014/09/49354-facebook-logo-icon-vector-icon-vector-eps.png" className="sliderimg" alt="project_photo"/>
      </Col>
+
      <Col align="center">
-     <img src="https://images.vexels.com/media/users/3/137380/isolated/lists/1b2ca367caa7eff8b45c09ec09b44c16-instagram-icon-logo.png" className="sliderimg" alt="project_photo"/>
+     <img height="100%" src="https://images.vexels.com/media/users/3/137380/isolated/lists/1b2ca367caa7eff8b45c09ec09b44c16-instagram-icon-logo.png" className="sliderimg" alt="project_photo"/>
      </Col>
       </AliceCarousel> 
+
       </Row>
   )
 }

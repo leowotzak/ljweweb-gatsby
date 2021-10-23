@@ -7,7 +7,7 @@ import { Container, Row, Col, Image } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export default ({ data }) => {
-  const { unemployed, firstName, lastName, occupation } = data.site.siteMetadata
+  const { unemployed, firstName, lastName } = data.site.siteMetadata
   const { dark } = useContext(ThemeContext)
   return (
     <PageLayout>
@@ -15,8 +15,7 @@ export default ({ data }) => {
       <Container className="text-center pt-5 mt-5" fluid>
 
         <Image
-          width="150"
-          height="150"
+          width="300"
           fluid
           src={dark ? `../../icons/lion-dark.png` : `../../icons/lion-light.png`}
           alt={dark ? "Darth Vader" : "R2-D2"}
@@ -30,17 +29,18 @@ export default ({ data }) => {
           <Row>
             <Col className="d-flex" style={{flexDirection: "column", alignItems: "center"}}>
               <Row>
-          <h1
+          {/* <h1
             style={{
               fontSize: "5rem",
               color: "black",
             }}
-          >
-            <Col xs={6}>
+          > */}
+            <Row>
+            <Col xs={12} sm={6}>
             <span className="first-name">{firstName}</span>&nbsp;
             <span className="last-name">{lastName}</span>
             </Col>
-          </h1>
+            </Row>
           </Row>
             </Col>
           </Row>

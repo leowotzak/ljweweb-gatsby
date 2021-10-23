@@ -43,10 +43,8 @@ export default ({ body, frontmatter, image }) => {
         </Col>
       </Row>
             {frontmatter.tags.map(tag => (
-              <Badge key={tag} pill className="mr-2 p-0 px-3 resume-tags">
-                  <h5>
-                    <small>{tag}</small>
-                    </h5>
+              <Badge key={tag} pill className="pt-2 mx-1 resume-tags">
+                    <small><h6>{tag}</h6></small>
               </Badge>
             ))}
     </Container>

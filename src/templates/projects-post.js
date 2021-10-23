@@ -36,7 +36,6 @@ const ProjectPageLayout = ({pageContext, children}) => {
   <Container fluid className="pt-5 min-vh-100">
     {projectTitle(pageContext)}
     <Row>
-
       <AliceCarousel autoPlay autoPlayInterval="3000">
       <Col align="center">
      <img src="https://www.designbust.com/download/1038/png/transparent_google_logo256.png" className="sliderimg" alt="project_photo"/>
@@ -54,7 +53,7 @@ const ProjectPageLayout = ({pageContext, children}) => {
          <img src={image.src} className="sliderimg" />
        ))} */}
     </Row>
-    <Row><Col><p>{children}</p></Col></Row>
+    <Row><Col>{children}</Col></Row>
   </Container>
   )
 }
