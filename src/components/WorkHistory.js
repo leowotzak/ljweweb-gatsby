@@ -1,9 +1,14 @@
 import React from "react"
 import Img from "gatsby-image"
 import { Container, Row, Col, Badge } from "react-bootstrap"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+
+
 
 const CompanyCard = ({ frontmatter, image }) => {
   const { company, position, startDate, endDate, location } = frontmatter
+  console.log(image)
+
   return (
     <Container fluid className="m-auto work-history">
       <Img
@@ -19,26 +24,22 @@ const CompanyCard = ({ frontmatter, image }) => {
         <h5 className="text-muted">{location}</h5>
         <h4 className="mt-2">{position}</h4>
         <h5 className="text-muted mt-2">
-          {startDate}-{endDate}
+          {startDate} &#8212; {endDate}
         </h5>
       </div>
     </Container>
   )
 }
 
-export default ({ html, frontmatter, image }) => {
+export default ({ body, frontmatter, image }) => {
   return (
     <Container className="p-1 project-link text-center">
       <Row>
         <Col className="col-md-4 col-12">
           <CompanyCard frontmatter={frontmatter} image={image} />
         </Col>
-        <Col className="col-md-8 col-12">
-          <p
-            className="text-justify mt-2"
-            dangerouslySetInnerHTML={{ __html: html }}
-            style={{ paddingRight: "25px"}}
-          />
+        <Col style={{textAlign: "left"}}>
+          <MDXRenderer>{body}</MDXRenderer>
         </Col>
       </Row>
             {frontmatter.tags.map(tag => (

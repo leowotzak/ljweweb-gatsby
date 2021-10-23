@@ -2,10 +2,14 @@
 
 @import "themes";
 
+@import "react-alice-carousel/lib/scss/alice-carousel.scss";
+
+
 html,
 body {
   margin: 0;
   font-family: "Raleway", sans-serif;
+  min-width: 360px;
   font-display: swap;
   height: 100%;
   width: 100%;
@@ -16,6 +20,11 @@ body {
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.sliderimg {
+  height: 350px;
+  object-fit: cover;
 }
 
 .app-container * {
@@ -88,7 +97,7 @@ body {
   font-size: 2.75rem;
   color: $gray-700;
   &:hover {
-    color: $orange;
+    color: rgb(255, 165, 0);
   }
   &.empire {
     border-radius: 100%;

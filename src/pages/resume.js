@@ -6,9 +6,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Container from "react-bootstrap/Container"
 
 export default ({ data }) => {
-  const history = data.allMarkdownRemark.edges || []
+  // const history = data.allMarkdownRemark.edges || []
+  const history = data.allMdx.edges || []
   const images = data.allFile.edges || []
-  const imageMap = Utils.getImageMap(images, /\/[work].*\/|$/)
+  const imageMap = Utils.getImageMap(images, /^(.+)\/([^\/]+)$/)
+  
   return (
     <PageLayout>
       <SEO title="Resume" />
@@ -27,8 +29,8 @@ export default ({ data }) => {
           <div key={node.id}>
             <WorkHistory
               frontmatter={node.frontmatter}
-              image={imageMap[node.fields.slug]}
-              html={node.html}
+              image={imageMap[node.slug.replace(/\/+$/, '')]}
+              body={node.body}
             />
             <hr className="w-75" />
           </div>
@@ -40,28 +42,6 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/work/" } }
-      sort: { fields: [frontmatter___startDate], order: DESC }
-    ) {
-      edges {
-        node {
-          id
-          html
-          frontmatter {
-            company
-            location
-            position
-            tags
-            startDate(formatString: "MMMM, YYYY")
-            endDate(formatString: "MMMM, YYYY")
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
     allFile(
       filter: {
         extension: { eq: "png" }
@@ -76,9 +56,58 @@ export const query = graphql`
               ...GatsbyImageSharpFluid
             }
           }
-          relativePath
+          relativeDirectory
+        }
+      }
+    }
+    allMdx(
+      filter: { 
+        fileAbsolutePath: {regex: "/content/work/"}
+      }) { 
+      edges {
+        node {
+          id
+          slug
+          excerpt
+          body
+          internal {
+            content
+          }
+          frontmatter {
+            company
+            endDate(formatString: "MMMM, YYYY")
+            startDate(formatString: "MMMM, YYYY")
+            location
+            position
+            tags
+            title
+          }
         }
       }
     }
   }
 `
+
+
+// allMarkdownRemark(
+//   filter: { fileAbsolutePath: { regex: "/work/" } }
+//   sort: { fields: [frontmatter___startDate], order: DESC }
+// ) {
+//   edges {
+//     node {
+//       id
+//       html
+//       frontmatter {
+//         company
+//         location
+//         position
+//         tags
+//         startDate(formatString: "MMMM, YYYY")
+//         endDate(formatString: "MMMM, YYYY")
+//       }
+//       fields {
+//         slug
+//       }
+//     }
+//   }
+// }

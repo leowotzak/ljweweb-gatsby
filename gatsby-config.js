@@ -9,7 +9,7 @@ module.exports = {
   siteMetadata: {
     title: `Leo J. Wotzak`,
     author: `Leo J. Wotzak`,
-    firstName: `Leo J.`,
+    firstName: `Leo`,
     lastName: `Wotzak`,
     description: `Leo Wotzak's personal website`,
     occupation: `Full Stack Developer`,
@@ -27,7 +27,7 @@ module.exports = {
     unemployed: true,
     designations: [
       `Full stack developer`,
-      `Self-taught programmer`,
+      `Experienced programmer`,
       `Finance & trading enthusiast`,
     ],
     readingList: [
@@ -77,22 +77,45 @@ module.exports = {
     },
     `gatsby-plugin-sass`,
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: "gatsby-plugin-page-creator",
       options: {
-        plugins: [
-          `gatsby-remark-relative-images`,
+        path: `${__dirname}/src/content`,
+      },
+    },
+    `gatsby-remark-images`,
+    `gatsby-plugin-mdx-frontmatter`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 200,
-              linkImagesToOriginal: false,
-              sizeByPixelDensity: true,
-              showCaptions: true
-            }
+              maxWidth: 500,              
+            },
           },
-        ]
-      }
+        ],
+        extensions: [`.mdx`, `.md`],
+      },
     },
+    // {
+    //   resolve: `gatsby-transformer-remark`,
+    //   options: {
+    //     plugins: [
+    //       `gatsby-remark-relative-images`,
+    //       {
+    //         resolve: `gatsby-remark-images`,
+    //         options: {
+    //           maxWidth: 200,
+    //           linkImagesToOriginal: false,
+    //           sizeByPixelDensity: true,
+    //           showCaptions: true
+    //         }
+    //       },
+    //     ]
+    //   }
+    // },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
