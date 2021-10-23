@@ -1,5 +1,7 @@
 import React from "react"
 import { Badge, Container, Row, Col } from "react-bootstrap";
+import { StaticQuery, graphql } from "gatsby"
+
 import AliceCarousel from 'react-alice-carousel';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import GithubLink from "../components/GithubLink"
@@ -47,12 +49,6 @@ const ProjectPageLayout = ({pageContext, children}) => {
      <img src="https://images.vexels.com/media/users/3/137380/isolated/lists/1b2ca367caa7eff8b45c09ec09b44c16-instagram-icon-logo.png" className="sliderimg" alt="project_photo"/>
      </Col>
      </AliceCarousel> 
-
-
-       {/* {images.map(image => (
-         <img src={image.src} className="sliderimg" />
-       ))} */}
-    </Row>
     <Row><Col>{children}</Col></Row>
   </Container>
   )
