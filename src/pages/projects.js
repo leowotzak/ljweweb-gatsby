@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 import { graphql } from "gatsby"
 import { PageLayout, PageTitle, ProjectLink } from "../components"
 import { SEO, Utils } from "../utils"
@@ -13,16 +13,16 @@ export default ({ data }) => {
   const allFeaturedImages = data.allFile.edges || []
   const regex = /^(.+)\/([^\/]+)$/
   const featuredImageMap = Utils.getImageMap(allFeaturedImages, regex, true, 3)
+  const { dark } = useContext(ThemeContext)
+
 
   return (
     <PageLayout>
       <SEO title="Projects" />
       <PageTitle title="Projects" />
-      <StaticImage src="./projects.png" alt="Projects" />
-
-      <Container className="text-left">
+      <Container>
+      <Image fluid style={{minWidth: "200px"}}src={ dark ? "../../icons/projects-dark.png" : "../../icons/projects-light.png" } alt="Projects" />
         <section>
-
         {newProjects.map(({ node }) => (
             <div key={node.id} className="p-3">
               <ProjectLink
