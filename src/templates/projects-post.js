@@ -37,7 +37,35 @@ const ProjectPageLayout = ({pageContext, children}) => {
   return(
   <Container fluid className="pt-5 min-vh-100">
     {projectTitle(pageContext)}
-    <Row>
+    {/* <StaticQuery
+      query={graphql`
+        query HeadingQuery {
+          allFile(filter: {extension: {eq: "png"}, relativeDirectory: {regex: "/content/projects/"}}) {
+            edges {
+              node {
+                childImageSharp {
+                  id
+                  fluid(maxWidth: 200) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+                relativeDirectory
+              }
+            }
+          }
+          imageSharp {
+            fixed(width: 400) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+      `}
+      render={data => (
+        <header>
+          {console.log("static query", data)}
+        </header>
+      )}
+    /> */}
       <AliceCarousel autoPlay autoPlayInterval="3000">
       <Col align="center">
      <img src="https://www.designbust.com/download/1038/png/transparent_google_logo256.png" className="sliderimg" alt="project_photo"/>
