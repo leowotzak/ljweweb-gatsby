@@ -1,20 +1,31 @@
 import React from "react"
 import { Badge, Container, Row, Col } from "react-bootstrap";
 import AliceCarousel from 'react-alice-carousel';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import GithubLink from "../components/GithubLink"
 import "react-alice-carousel/lib/alice-carousel.css";
 
 const projectTitle = ({frontmatter}) => (
+  <Container>
   <Row className="mt-5">
   <Col align="center">
   <h2>{frontmatter.title}</h2>
+  <Row>
+    <GithubLink link={frontmatter} />
+    </Row>
+    <Row className="mt-3">
+      <Col>
   {frontmatter.tags.map(tag => (
-    <Badge pill variant="dark" className="px-2 mr-1">
+    <Badge pill key={tag} variant="dark" className="px-2 my-1 mr-1">
       <h5 className="text-white my-0">{tag}</h5>
       </Badge>)
     )}
+    </Col>
+    </Row>
     <hr />
   </Col>
   </Row>
+  </Container>
 )
 
 const ProjectPageLayout = ({pageContext, children}) => {
