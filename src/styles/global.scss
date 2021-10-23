@@ -2,6 +2,9 @@
 
 @import "themes";
 
+@import "react-alice-carousel/lib/scss/alice-carousel.scss";
+
+
 html,
 body {
   margin: 0;
@@ -17,6 +20,11 @@ body {
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.sliderimg {
+  height: 350px;
+  object-fit: cover;
 }
 
 .app-container * {
