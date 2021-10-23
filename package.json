@@ -50,7 +50,8 @@
     "react-alice-carousel": "^2.5.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.3.1"
   },
   "devDependencies": {
     "eslint-config-react-app": "^5.2.1",
