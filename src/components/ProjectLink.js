@@ -5,25 +5,15 @@ import { Container, Badge, Col, Row } from "react-bootstrap"
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 
-const ComponentWide = ({images}) => {
-
-  return (
-    <Row xs={1} md={3}>
-      {images.map(image => (
-              <Col>
-        <Img fluid={image} className="m-auto w-75" />
-        </Col>
-        ))}
-    </Row>
-  )
-}
 
 const ComponentSkinny = ({images}) => {
 
   return(
+    <Row>
       <AliceCarousel autoPlay autoPlayInterval="3000">
-        {images.map(image => (<Col align="center"><Img fluid={image} style={{maxWidth: 400}} /></Col>))}
+        {images.map(image => (<Col key={image.src} align="center"><Img fluid={image} style={{maxWidth: 400}} /></Col>))}
       </AliceCarousel> 
+      </Row>
   )
 }
 

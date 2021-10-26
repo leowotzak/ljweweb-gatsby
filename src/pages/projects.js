@@ -1,13 +1,12 @@
 import React, { useContext } from "react"
 import { graphql } from "gatsby"
 import { PageLayout, PageTitle, ProjectLink } from "../components"
-import Img from "gatsby-image";
 import ThemeContext from "../utils/theme"
 import { Image } from "react-bootstrap"
 import { SEO, Utils } from "../utils"
 import Container from "react-bootstrap/Container"
 
-var path = require('path');
+var path = require("path")
 
 export default ({ data }) => {
   // const allProjects = data.allMarkdownRemark.edges || []
@@ -17,19 +16,27 @@ export default ({ data }) => {
   const featuredImageMap = Utils.getImageMap(allFeaturedImages, regex, true, 3)
   const { dark } = useContext(ThemeContext)
 
-
   return (
     <PageLayout>
       <SEO title="Projects" />
       <PageTitle title="Projects" />
       <Container>
-      <Image fluid style={{minWidth: "200px"}} src={ dark ? "../../icons/projects-dark.png" : "../../icons/projects-light.png" } alt="Projects" />
+        <Image
+          fluid
+          style={{ minWidth: "200px" }}
+          src={
+            dark
+              ? "../../icons/projects-dark.png"
+              : "../../icons/projects-light.png"
+          }
+          alt="Projects"
+        />
         <section>
-        {newProjects.map(({ node }) => (
+          {newProjects.map(({ node }) => (
             <div key={node.id} className="p-3">
               <ProjectLink
                 to={path.basename(node.slug)}
-                featuredImages={featuredImageMap[node.slug.replace(/\/+$/, '')]}
+                featuredImages={featuredImageMap[node.slug.replace(/\/+$/, "")]}
                 title={node.frontmatter.title}
                 tags={node.frontmatter.tags}
                 excerpt={node.excerpt}
@@ -45,7 +52,12 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allFile(filter: {extension: {eq: "png"}, relativeDirectory: {regex: "/content/projects/"}}) {
+    allFile(
+      filter: {
+        extension: { eq: "png" }
+        relativeDirectory: { regex: "/content/projects/" }
+      }
+    ) {
       edges {
         node {
           childImageSharp {
@@ -63,7 +75,10 @@ export const query = graphql`
         ...GatsbyImageSharpFixed
       }
     }
-    allMdx(filter: {fileAbsolutePath: {regex: "/content/projects/"}}, sort: {fields: frontmatter___date, order: DESC}) {
+    allMdx(
+      filter: { fileAbsolutePath: { regex: "/content/projects/" } }
+      sort: { fields: frontmatter___date, order: DESC }
+    ) {
       edges {
         node {
           body
@@ -79,26 +94,3 @@ export const query = graphql`
     }
   }
 `
-
-
-// allMarkdownRemark(
-//   filter: { fileAbsolutePath: { regex: "/projects/" } }
-//   sort: { fields: [frontmatter___date], order: DESC }
-// ) {
-//   totalCount
-//   edges {
-//     node {
-//       id
-//       timeToRead
-//       frontmatter {
-//         title
-//         tags
-//         date(formatString: "DD MMMM, YYYY")
-//       }
-//       fields {
-//         slug
-//       }
-//       excerpt
-//     }
-//   }
-// }

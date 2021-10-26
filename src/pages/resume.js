@@ -60,10 +60,7 @@ export const query = graphql`
         }
       }
     }
-    allMdx(
-      filter: { 
-        fileAbsolutePath: {regex: "/content/work/"}
-      }) { 
+    allMdx(sort: {fields: frontmatter___endDate, order: DESC}, filter: {fileAbsolutePath: {regex: "/content/work/"}}) {
       edges {
         node {
           id
@@ -75,8 +72,8 @@ export const query = graphql`
           }
           frontmatter {
             company
-            endDate(formatString: "MMMM, YYYY")
-            startDate(formatString: "MMMM, YYYY")
+            endDate(formatString: "MMMM YYYY")
+            startDate(formatString: "MMMM YYYY")
             location
             position
             tags

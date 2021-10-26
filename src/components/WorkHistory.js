@@ -7,7 +7,6 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const CompanyCard = ({ frontmatter, image }) => {
   const { company, position, startDate, endDate, location } = frontmatter
-  console.log(image)
 
   return (
     <Container fluid className="m-auto work-history">
