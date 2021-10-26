@@ -14,11 +14,11 @@ const projectTitle = ({frontmatter}) => (
   <Row>
     <GithubLink link={frontmatter} />
     </Row>
-    <Row className="mt-3">
+    <Row >
       <Col>
   {frontmatter.tags.map(tag => (
     <Badge pill key={tag} variant="dark" className="px-2 my-1 mr-1">
-      <h5 className="text-white my-0">{tag}</h5>
+      <h6 className="text-white my-0">{tag}</h6>
       </Badge>)
     )}
     </Col>
@@ -58,7 +58,7 @@ const ProjectPageLayout = ({pageContext, children}) => {
         }
       `}
       render={data => (
-        <AliceCarousel autoPlay autoPlayInterval="3000">
+        <AliceCarousel infinite autoPlay autoPlayInterval="3000">
         {data.allFile.edges.filter(
             ({node}) => node.relativeDirectory.match(pageContext.frontmatter.title)
             ).map(({node}) => <Col align="center" key={node.id} ><Img key={node.id} fluid={node.childImageSharp.fluid} style={{maxWidth: 400}}/></Col>)}
