@@ -32,6 +32,10 @@ body {
   transition: background 0.45s ease-in-out;
 }
 
+.alice-carousel__next-btn {
+  text-align: left
+}
+
 .bg-none {
   background: rgba(0, 0, 0, 0) !important;
 }

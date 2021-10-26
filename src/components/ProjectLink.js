@@ -1,56 +1,13 @@
-import React, {useState, useEffect} from "react"
+import React from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { Container, Badge, Col, Row } from "react-bootstrap"
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 
-const ComponentWide = ({images}) => {
-
-  return (
-    <Row xs={1} md={3}>
-      {images.map(image => (
-              <Col>
-        <Img fluid={image} className="m-auto w-75" />
-        </Col>
-        ))}
-    </Row>
-  )
-}
-
-const ComponentSkinny = ({images}) => {
-
-  return(
-      <AliceCarousel autoPlay autoPlayInterval="3000">
-        {images.map(image => (<Col align="center"><Img fluid={image} style={{maxWidth: 400}} /></Col>))}
-      </AliceCarousel> 
-  )
-}
-
-
-const ImageComponent = ({images}) => {
-
-  const isBrowser = typeof window !== "undefined"
-  const [isDesktop, setDesktop] = useState(isBrowser && window.innerWidth > 1450)
-
-
-  const updateMedia = () => {
-    setDesktop(isBrowser && window.innerWidth > 1450);
-  };
-
-  useEffect(() => {
-    if (isBrowser) {
-      window.addEventListener("resize", updateMedia)
-      return () => window.removeEventListener("resize", updateMedia)
-    }
-  });
-
-  return <ComponentSkinny images={images} />
-}
-
 export default ({ excerpt, featuredImages, tags, title, to }) => {
   return (
-    <Container fluid>
+    <Container align="center">
       <Row className="mb-5">
         <Col >
       <Link to={to} style={{ textDecoration: "none" }}>
@@ -58,7 +15,11 @@ export default ({ excerpt, featuredImages, tags, title, to }) => {
       </Link>
       </Col>
       </Row>
-        <ImageComponent images={featuredImages} className="pt-5" />
+      <Row >
+      <AliceCarousel infinite autoPlay autoPlayInterval="3000">
+        {featuredImages.map(image => (<Col key={image.src}><Img fluid={image} style={{maxWidth: 300}} /></Col>))}
+      </AliceCarousel> 
+      </Row>      
       <Row align="center">
         <Col align="center">
       {tags.map(tag => (
