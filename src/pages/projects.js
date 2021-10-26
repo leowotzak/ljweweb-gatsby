@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import { graphql } from "gatsby"
 import { PageLayout, PageTitle, ProjectLink } from "../components"
+import Img from "gatsby-image";
 import ThemeContext from "../utils/theme"
 import { Image } from "react-bootstrap"
 import { SEO, Utils } from "../utils"
@@ -22,7 +23,7 @@ export default ({ data }) => {
       <SEO title="Projects" />
       <PageTitle title="Projects" />
       <Container>
-      <Image fluid style={{minWidth: "200px"}}src={ dark ? "../../icons/projects-dark.png" : "../../icons/projects-light.png" } alt="Projects" />
+      <Image fluid style={{minWidth: "200px"}} src={ dark ? "../../icons/projects-dark.png" : "../../icons/projects-light.png" } alt="Projects" />
         <section>
         {newProjects.map(({ node }) => (
             <div key={node.id} className="p-3">
@@ -62,7 +63,7 @@ export const query = graphql`
         ...GatsbyImageSharpFixed
       }
     }
-    allMdx(filter: {fileAbsolutePath: {regex: "/content/projects/"}}, sort: {fields: frontmatter___endDate, order: DESC}) {
+    allMdx(filter: {fileAbsolutePath: {regex: "/content/projects/"}}, sort: {fields: frontmatter___date, order: DESC}) {
       edges {
         node {
           body
