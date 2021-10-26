@@ -40,7 +40,7 @@ const ImageComponent = ({images}) => {
 
 export default ({ excerpt, featuredImages, tags, title, to }) => {
   return (
-    <Container fluid>
+    <Container>
       <Row className="mb-5">
         <Col >
       <Link to={to} style={{ textDecoration: "none" }}>
