@@ -21,17 +21,9 @@ const ComponentWide = ({images}) => {
 const ComponentSkinny = ({images}) => {
 
   return(
-    <Row>
-      <Col className="d-flex flex-column align-items-center">
       <AliceCarousel autoPlay autoPlayInterval="3000">
-     <img src="https://www.designbust.com/download/1038/png/transparent_google_logo256.png" className="sliderimg" alt="project_photo"/>
-
-     <img src="https://logoeps.com/wp-content/uploads/2014/09/49354-facebook-logo-icon-vector-icon-vector-eps.png" className="sliderimg" alt="project_photo"/>
-
-     <img src="https://images.vexels.com/media/users/3/137380/isolated/lists/1b2ca367caa7eff8b45c09ec09b44c16-instagram-icon-logo.png" className="sliderimg" alt="project_photo"/>
+        {images.map(image => (<Col align="center"><Img fluid={image} style={{maxWidth: 400}} /></Col>))}
       </AliceCarousel> 
-      </Col>
-      </Row>
   )
 }
 
@@ -53,20 +45,20 @@ const ImageComponent = ({images}) => {
     }
   });
 
-  return (isDesktop ? <ComponentWide images={images} /> : <ComponentSkinny images={images} />);
+  return <ComponentSkinny images={images} />
 }
 
 export default ({ excerpt, featuredImages, tags, title, to }) => {
   return (
     <Container fluid>
-      <Row >
+      <Row className="mb-5">
         <Col >
       <Link to={to} style={{ textDecoration: "none" }}>
         <h2 className="mt-5">{title}</h2>
       </Link>
       </Col>
       </Row>
-        <ImageComponent images={featuredImages} />
+        <ImageComponent images={featuredImages} className="pt-5" />
       <Row align="center">
         <Col align="center">
       {tags.map(tag => (

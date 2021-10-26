@@ -1,8 +1,9 @@
 import React from "react"
 import { Badge, Container, Row, Col } from "react-bootstrap";
 import { StaticQuery, graphql } from "gatsby"
-
+import { Utils } from "../utils"
 import AliceCarousel from 'react-alice-carousel';
+import Img from "gatsby-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import GithubLink from "../components/GithubLink"
 import "react-alice-carousel/lib/alice-carousel.css";
@@ -35,9 +36,9 @@ const ProjectPageLayout = ({pageContext, children}) => {
   console.log("context", pageContext)
 
   return(
-  <Container fluid className="pt-5 min-vh-100">
+  <Container fluid className="pt-5 min-vh-100 w-75">
     {projectTitle(pageContext)}
-    {/* <StaticQuery
+    <StaticQuery
       query={graphql`
         query HeadingQuery {
           allFile(filter: {extension: {eq: "png"}, relativeDirectory: {regex: "/content/projects/"}}) {
@@ -45,7 +46,7 @@ const ProjectPageLayout = ({pageContext, children}) => {
               node {
                 childImageSharp {
                   id
-                  fluid(maxWidth: 200) {
+                  fluid {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -54,29 +55,20 @@ const ProjectPageLayout = ({pageContext, children}) => {
             }
           }
           imageSharp {
-            fixed(width: 400) {
+            fixed(width: 200) {
               ...GatsbyImageSharpFixed
             }
           }
         }
       `}
       render={data => (
-        <header>
-          {console.log("static query", data)}
-        </header>
+        <AliceCarousel autoPlay autoPlayInterval="3000">
+        {data.allFile.edges.filter(
+            ({node}) => node.relativeDirectory.match(pageContext.frontmatter.title)
+            ).map(({node}) => <Col align="center"><Img fluid={node.childImageSharp.fluid} style={{maxWidth: 400}}/></Col>)}
+        </AliceCarousel> 
       )}
-    /> */}
-      <AliceCarousel autoPlay autoPlayInterval="3000">
-      <Col align="center">
-     <img src="https://www.designbust.com/download/1038/png/transparent_google_logo256.png" className="sliderimg" alt="project_photo"/>
-     </Col>
-     <Col align="center">
-     <img src="https://logoeps.com/wp-content/uploads/2014/09/49354-facebook-logo-icon-vector-icon-vector-eps.png" className="sliderimg" alt="project_photo"/>
-     </Col>
-     <Col align="center">
-     <img src="https://images.vexels.com/media/users/3/137380/isolated/lists/1b2ca367caa7eff8b45c09ec09b44c16-instagram-icon-logo.png" className="sliderimg" alt="project_photo"/>
-     </Col>
-     </AliceCarousel> 
+    />
     <Row><Col>{children}</Col></Row>
   </Container>
   )
