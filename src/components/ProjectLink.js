@@ -15,9 +15,9 @@ export default ({ excerpt, featuredImages, tags, title, to }) => {
       </Link>
       </Col>
       </Row>
-      <Row>
+      <Row >
       <AliceCarousel infinite autoPlay autoPlayInterval="3000">
-        {featuredImages.map(image => (<Col key={image.src} align="center"><Img fluid={image} style={{maxWidth: 400}} /></Col>))}
+        {featuredImages.map(image => (<Col key={image.src}><Img fluid={image} style={{maxWidth: 300}} /></Col>))}
       </AliceCarousel> 
       </Row>      
       <Row align="center">
