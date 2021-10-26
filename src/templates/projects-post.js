@@ -61,7 +61,7 @@ const ProjectPageLayout = ({pageContext, children}) => {
         <AliceCarousel autoPlay autoPlayInterval="3000">
         {data.allFile.edges.filter(
             ({node}) => node.relativeDirectory.match(pageContext.frontmatter.title)
-            ).map(({node}) => <Col key={node.id} align="center"><Img fluid={node.childImageSharp.fluid} style={{maxWidth: 400}}/></Col>)}
+            ).map(({node}) => <Col align="center" key={node.id} ><Img key={node.id} fluid={node.childImageSharp.fluid} style={{maxWidth: 400}}/></Col>)}
         </AliceCarousel> 
       )}
     />

@@ -5,39 +5,6 @@ import { Container, Badge, Col, Row } from "react-bootstrap"
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 
-
-const ComponentSkinny = ({images}) => {
-
-  return(
-    <Row>
-      <AliceCarousel autoPlay autoPlayInterval="3000">
-        {images.map(image => (<Col key={image.src} align="center"><Img fluid={image} style={{maxWidth: 400}} /></Col>))}
-      </AliceCarousel> 
-      </Row>
-  )
-}
-
-
-const ImageComponent = ({images}) => {
-
-  const isBrowser = typeof window !== "undefined"
-  const [isDesktop, setDesktop] = useState(isBrowser && window.innerWidth > 1450)
-
-
-  const updateMedia = () => {
-    setDesktop(isBrowser && window.innerWidth > 1450);
-  };
-
-  useEffect(() => {
-    if (isBrowser) {
-      window.addEventListener("resize", updateMedia)
-      return () => window.removeEventListener("resize", updateMedia)
-    }
-  });
-
-  return <ComponentSkinny images={images} />
-}
-
 export default ({ excerpt, featuredImages, tags, title, to }) => {
   return (
     <Container>
@@ -48,8 +15,11 @@ export default ({ excerpt, featuredImages, tags, title, to }) => {
       </Link>
       </Col>
       </Row>
-        <ImageComponent images={featuredImages} className="pt-5" />
-      <Row align="center">
+      <Row>
+      <AliceCarousel autoPlay autoPlayInterval="3000">
+        {featuredImages.map(image => (<Col key={image.src} align="center"><Img fluid={image} style={{maxWidth: 400}} /></Col>))}
+      </AliceCarousel> 
+      </Row>      <Row align="center">
         <Col align="center">
       {tags.map(tag => (
         <Badge key={tag} pill variant="dark" className="px-2 mr-1">
