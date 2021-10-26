@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import ThemeContext from "../utils/theme"
-import { Navbar, Nav, Form, Row, Col, Container } from "react-bootstrap"
+import { Navbar, Nav, Form, Col } from "react-bootstrap"
 import { Link } from "gatsby"
 import "./Fontawesome.js"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"

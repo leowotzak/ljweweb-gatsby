@@ -34,12 +34,11 @@ export default ({ data }) => {
       <Container>
         <Image
           rounded
-          width="140"
-          height="140"
+          width="200"
           src={`../../icons/lion-${toString()}.png`}
           alt={author}
         />
-        <article className="w-75 m-auto pt-2 text-justify">
+        <article className="w-90 m-auto pt-2 text-justify">
           <p className="text-center">
             {designations.map((attr, i) => (
               <span key={attr}>
@@ -49,8 +48,8 @@ export default ({ data }) => {
             ))}
           </p>
           <p className="i-5 mt-4 pt-2">
-            Hello! My name is <b>{`${author}`}</b>. I am an experienced&nbsp;
-            <b>{occupation}</b> with a proven track record of designing, developing, and implementing
+            Hello! My name is <b>{`${author}`}</b>. I am an experienced&nbsp;<b>{occupation}</b> 
+            with a proven track record of designing, developing, and implementing
             applications and solutions using a range of technologies and
             languages. I seek to leverage my development experience and hands-on technical
             expertise in a challenging role as a <b>{occupation}</b>.

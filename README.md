@@ -6,6 +6,8 @@ My project is based off of the [gatsby-personal-site-template](https://github.co
 
 ## LJWE website gatsby
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d5aef605-d961-4c6c-9285-14992f1dcb61/deploy-status)](https://app.netlify.com/sites/boring-lovelace-564f37/deploys)
+
 This project is my first major rework of my personal website as well as my first `gatsby` project. Since I've created
 my `create-react-app` website from scratch, I can now use the starters and plugins that `gatsby` provides confidently. The
 website currently supports a landing, about, all projects, resume, and individual project pages. The site has custom styling, and the individual projects pages and the resume page are created using `MDX` (markdown for `JSX/React`). The backend of the website is supported by a `GraphQL` database, which the site queries for its content.
