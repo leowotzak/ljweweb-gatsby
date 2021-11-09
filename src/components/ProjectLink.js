@@ -6,12 +6,15 @@ import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 
 export default ({ excerpt, featuredImages, tags, title, to }) => {
+
+  console.log(featuredImages);
+
   return (
     <Container align="center">
       <Link to={to} style={{ textDecoration: "none" }}>
         <h2>{title}</h2>
       </Link>
-      <AliceCarousel infinite autoPlay autoHeight autoPlayInterval="3000">
+      <AliceCarousel infinite autoPlay autoPlayInterval="3000">
         {featuredImages.map(image => (<Img className="sliderimg" key={image.src} fluid={image} style={{maxWidth:360 }}/>))}
       </AliceCarousel> 
       <Row align="center">
