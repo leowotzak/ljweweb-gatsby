@@ -11,18 +11,12 @@ export default ({ excerpt, featuredImages, tags, title, to }) => {
 
   return (
     <Container align="center">
-      <Row className="mb-5">
-        <Col >
       <Link to={to} style={{ textDecoration: "none" }}>
-        <h2 className="mt-5">{title}</h2>
+        <h2>{title}</h2>
       </Link>
-      </Col>
-      </Row>
-      <Row >
       <AliceCarousel infinite autoPlay autoPlayInterval="3000">
-        {featuredImages.map(image => <GatsbyImage image={image}/>)}
+        {featuredImages.map(image => <GatsbyImage image={getImage(image)}/>)}
       </AliceCarousel> 
-      </Row>      
       <Row align="center">
         <Col align="center">
       {tags.map(tag => (

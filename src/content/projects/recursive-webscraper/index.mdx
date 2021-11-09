@@ -1,0 +1,37 @@
+---
+title: "Recursive Webscraper"
+tags: ["Python", "Beautiful Soup", "Webscraper", "Recursion", "Tree"]
+featuredImages: [./rws1@4x.png, ./rws2@4x.png, ./rws3.png]
+date: "2021-11-08"
+link: "https://github.com/leowotzak/recursive-webscraper"
+---
+import ProjectPageLayout from "../../../templates/projects-post";
+export default ProjectPageLayout;
+
+#### About
+
+`Recursive-webscrapper` is a `Python` module that navigates a website's local hyperlinks and constructs a `tree` of `HTML` pages.
+This tool was designed to abstract the public pages of websites, in order to extract data in an efficient, organized manner. 
+This tool was created as part of a `freelance assignment` to extract contact information from particular websites for the purposes of lead generation.
+The primary obstacle was the fact that new URLs would constantly be introduced, with unknown page structures. A way to navigate through these URLs was necessary.
+
+Websites are modeled using a `tree data structure`, allowing for both `depth-first` and `breadth-first` searches to find pages of interest. 
+Performing analysis of contextual links is possible. For example, one can search if a company is listing contact info anywhere on their website, and 
+then extract URLs from any matches. Conversely, one can search for a URL containing `sponsors` and then return relevant `HTML` 
+for that page and any child pages.
+
+#### Core Features
+
+* `Recursive implimentation`
+* Utilizes `Beautiful Soup` to parse `HTML`
+* `HTTP` error handling
+* Saves output for later searching
+* Uses `regular expressions` to parse text
+
+
+
+
+
+
+
+

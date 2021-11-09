@@ -1,7 +1,6 @@
 import React, { useContext } from "react"
 import { graphql } from "gatsby"
 import { PageLayout, PageTitle, ProjectLink } from "../components"
-import {GatsbyImage, getImage } from "gatsby-plugin-image"
 import ThemeContext from "../utils/theme"
 import { Image } from "react-bootstrap"
 import { SEO, Utils } from "../utils"

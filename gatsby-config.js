@@ -23,7 +23,7 @@ module.exports = {
       `Work`,
     ],
     siteUrl:
-      process.env.URL || process.env.DEPLOY_URL || `http://localhost:8000`,
+      process.env.URL || process.env.DEPLOY_URL || `https://localhost:8000`,
     unemployed: true,
     designations: [
       `Full stack developer`,
