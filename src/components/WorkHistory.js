@@ -1,5 +1,5 @@
 import React from "react"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { Container, Row, Col, Badge } from "react-bootstrap"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
@@ -10,14 +10,15 @@ const CompanyCard = ({ frontmatter, image }) => {
 
   return (
     <Container fluid className="m-auto work-history">
-      <Img
+            <GatsbyImage  />
+      {/* <Img
         fluid={image}
         style={{
           maxHeight: "15vmax",
           maxWidth: "15vmax",
         }}
         className="m-auto"
-      />
+      /> */}
       <div className="md-font">
         <h2 className="m-auto pt-2">{company}</h2>
         <h5 className="text-muted">{location}</h5>

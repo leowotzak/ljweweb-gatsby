@@ -2,7 +2,7 @@ import React from "react"
 import { Badge, Container, Row, Col } from "react-bootstrap";
 import { StaticQuery, graphql } from "gatsby"
 import AliceCarousel from 'react-alice-carousel';
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import GithubLink from "../components/GithubLink"
 import "react-alice-carousel/lib/alice-carousel.css";
 
@@ -61,7 +61,7 @@ const ProjectPageLayout = ({pageContext, children}) => {
         <AliceCarousel infinite autoPlay autoPlayInterval="3000">
         {data.allFile.edges.filter(
             ({node}) => node.relativeDirectory.match(pageContext.frontmatter.title)
-            ).map(({node}) => <Col align="center" key={node.id} ><Img key={node.id} fluid={node.childImageSharp.fluid} style={{maxWidth: 400}}/></Col>)}
+            ).map(({node}) => <Col align="center"><GatsbyImage image={getImage(node)}/></Col>)}
         </AliceCarousel> 
       )}
     />

@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import { graphql } from "gatsby"
 import { PageLayout, PageTitle, ProjectLink } from "../components"
+import {GatsbyImage, getImage } from "gatsby-plugin-image"
 import ThemeContext from "../utils/theme"
 import { Image } from "react-bootstrap"
 import { SEO, Utils } from "../utils"
@@ -15,6 +16,8 @@ export default ({ data }) => {
   const regex = /^(.+)\/([^]+)$/
   const featuredImageMap = Utils.getImageMap(allFeaturedImages, regex, true, 3)
   const { dark } = useContext(ThemeContext)
+
+  console.log(allFeaturedImages)
 
   return (
     <PageLayout>
@@ -61,18 +64,10 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            id
-            fluid(maxWidth: 200) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 200) 
           }
           relativeDirectory
         }
-      }
-    }
-    imageSharp {
-      fixed(width: 400) {
-        ...GatsbyImageSharpFixed
       }
     }
     allMdx(
