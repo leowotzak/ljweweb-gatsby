@@ -51,9 +51,8 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
-            }
+            id
+            gatsbyImageData(width: 200)
           }
           relativeDirectory
         }

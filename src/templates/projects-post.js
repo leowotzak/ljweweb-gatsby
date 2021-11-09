@@ -41,18 +41,10 @@ const ProjectPageLayout = ({pageContext, children}) => {
             edges {
               node {
                 childImageSharp {
-                  id
-                  fluid {
-                    ...GatsbyImageSharpFluid
-                  }
+                  gatsbyImageData(width: 500) 
                 }
                 relativeDirectory
               }
-            }
-          }
-          imageSharp {
-            fixed(width: 200) {
-              ...GatsbyImageSharpFixed
             }
           }
         }

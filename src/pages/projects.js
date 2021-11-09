@@ -25,7 +25,7 @@ export default ({ data }) => {
       <Container>
         <Image
           fluid
-          style={{ minWidth: "200px" }}
+          style={{ width: "100%", minWidth: "200px", maxWidth: "600px" }}
           src={
             dark
               ? "../../icons/projects-dark.png"
@@ -63,7 +63,7 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            gatsbyImageData(width: 200) 
+            gatsbyImageData(width: 500)
           }
           relativeDirectory
         }

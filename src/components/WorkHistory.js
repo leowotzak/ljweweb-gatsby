@@ -10,7 +10,7 @@ const CompanyCard = ({ frontmatter, image }) => {
 
   return (
     <Container fluid className="m-auto work-history">
-            <GatsbyImage  />
+            <GatsbyImage image={image}/>
       {/* <Img
         fluid={image}
         style={{
