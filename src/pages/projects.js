@@ -13,10 +13,8 @@ export default ({ data }) => {
   const newProjects = data.allMdx.edges || []
   const allFeaturedImages = data.allFile.edges || []
   const regex = /^(.+)\/([^]+)$/
-  const featuredImageMap = Utils.getImageMap(allFeaturedImages, regex, true, 3)
+  const featuredImageMap = Utils.getImageMap(allFeaturedImages, regex, true, 10)
   const { dark } = useContext(ThemeContext)
-
-  console.log(allFeaturedImages)
 
   return (
     <PageLayout>
@@ -62,6 +60,7 @@ export const query = graphql`
     ) {
       edges {
         node {
+          id
           childImageSharp {
             gatsbyImageData(width: 500)
           }

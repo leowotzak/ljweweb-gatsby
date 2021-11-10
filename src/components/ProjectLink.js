@@ -13,8 +13,8 @@ export default ({ excerpt, featuredImages, tags, title, to }) => {
         <h2>{title}</h2>
       </Link>
       <AliceCarousel infinite autoPlay autoPlayInterval="3000">
-        {featuredImages.map(image => (
-          <GatsbyImage key={image} image={getImage(image)} />
+        {featuredImages.map((image, index) => (
+          <GatsbyImage key={image} alt={toString(index)} image={getImage(image)} />
         ))}
       </AliceCarousel> 
       <Row align="center">

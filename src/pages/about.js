@@ -28,7 +28,6 @@ export default ({ data }) => {
   const bookLinks = readingList.map(book => MediaLink(book))
   const movieLinks = movieList.map(show => MediaLink(show))
   const techStack = data.allFile.edges
-  console.log(techStack)
 
   return (
     <PageLayout>
@@ -66,7 +65,7 @@ export default ({ data }) => {
           </p>
         </article>
             {techStack.map(({node}) => (
-              <GatsbyImage className="m-2" image={getImage(node)} />
+              <GatsbyImage className="m-2" key={node.id} alt={node.name} image={getImage(node)} />
             ))}
         <article className="w-75 m-auto">
           {unemployed && (
@@ -117,8 +116,9 @@ export const query = graphql`
     ) {
       edges {
         node {
+          id
+          name
           childImageSharp {
-            id
             gatsbyImageData(width: 100)
           }
           relativeDirectory
