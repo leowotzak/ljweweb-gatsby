@@ -13,7 +13,7 @@ export default ({ data }) => {
   const newProjects = data.allMdx.edges || []
   const allFeaturedImages = data.allFile.edges || []
   const regex = /^(.+)\/([^]+)$/
-  const featuredImageMap = Utils.getImageMap(allFeaturedImages, regex, true, 3)
+  const featuredImageMap = Utils.getImageMap(allFeaturedImages, regex, true, 10)
   const { dark } = useContext(ThemeContext)
 
   return (
@@ -23,7 +23,7 @@ export default ({ data }) => {
       <Container>
         <Image
           fluid
-          style={{ minWidth: "200px" }}
+          style={{ width: "100%", minWidth: "200px", maxWidth: "600px" }}
           src={
             dark
               ? "../../icons/projects-dark.png"
@@ -60,19 +60,12 @@ export const query = graphql`
     ) {
       edges {
         node {
+          id
           childImageSharp {
-            id
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 500)
           }
           relativeDirectory
         }
-      }
-    }
-    imageSharp {
-      fixed(width: 400) {
-        ...GatsbyImageSharpFixed
       }
     }
     allMdx(

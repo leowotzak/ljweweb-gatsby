@@ -6,11 +6,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Container from "react-bootstrap/Container"
 
 export default ({ data }) => {
-  // const history = data.allMarkdownRemark.edges || []
   const history = data.allMdx.edges || []
   const images = data.allFile.edges || []
   const imageMap = Utils.getImageMap(images, /^(.+)\/([^]+)$/)
-  
+
   return (
     <PageLayout>
       <SEO title="Resume" />
@@ -29,7 +28,7 @@ export default ({ data }) => {
           <div key={node.id}>
             <WorkHistory
               frontmatter={node.frontmatter}
-              image={imageMap[node.slug.replace(/\/+$/, '')]}
+              image={imageMap[node.slug.replace(/\/+$/, "")]}
               body={node.body}
             />
             <hr className="w-75" />
@@ -52,15 +51,17 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
-            }
+            id
+            gatsbyImageData(width: 200)
           }
           relativeDirectory
         }
       }
     }
-    allMdx(sort: {fields: frontmatter___endDate, order: DESC}, filter: {fileAbsolutePath: {regex: "/content/work/"}}) {
+    allMdx(
+      sort: { fields: frontmatter___endDate, order: DESC }
+      filter: { fileAbsolutePath: { regex: "/content/work/" } }
+    ) {
       edges {
         node {
           id
@@ -84,27 +85,3 @@ export const query = graphql`
     }
   }
 `
-
-
-// allMarkdownRemark(
-//   filter: { fileAbsolutePath: { regex: "/work/" } }
-//   sort: { fields: [frontmatter___startDate], order: DESC }
-// ) {
-//   edges {
-//     node {
-//       id
-//       html
-//       frontmatter {
-//         company
-//         location
-//         position
-//         tags
-//         startDate(formatString: "MMMM, YYYY")
-//         endDate(formatString: "MMMM, YYYY")
-//       }
-//       fields {
-//         slug
-//       }
-//     }
-//   }
-// }

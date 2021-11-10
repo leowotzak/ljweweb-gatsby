@@ -1,13 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Container, Badge, Col, Row } from "react-bootstrap"
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 
 export default ({ excerpt, featuredImages, tags, title, to }) => {
-
-  console.log(featuredImages);
 
   return (
     <Container align="center">
@@ -15,7 +13,9 @@ export default ({ excerpt, featuredImages, tags, title, to }) => {
         <h2>{title}</h2>
       </Link>
       <AliceCarousel infinite autoPlay autoPlayInterval="3000">
-        {featuredImages.map(image => (<Img className="sliderimg" key={image.src} fluid={image} style={{maxWidth:360 }}/>))}
+        {featuredImages.map((image, index) => (
+          <GatsbyImage key={image} alt={toString(index)} image={getImage(image)} />
+        ))}
       </AliceCarousel> 
       <Row align="center">
         <Col align="center">

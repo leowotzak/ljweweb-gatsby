@@ -2,7 +2,7 @@ import React from "react"
 import { Badge, Container, Row, Col } from "react-bootstrap";
 import { StaticQuery, graphql } from "gatsby"
 import AliceCarousel from 'react-alice-carousel';
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import GithubLink from "../components/GithubLink"
 import "react-alice-carousel/lib/alice-carousel.css";
 
@@ -41,18 +41,10 @@ const ProjectPageLayout = ({pageContext, children}) => {
             edges {
               node {
                 childImageSharp {
-                  id
-                  fluid {
-                    ...GatsbyImageSharpFluid
-                  }
+                  gatsbyImageData(width: 500) 
                 }
                 relativeDirectory
               }
-            }
-          }
-          imageSharp {
-            fixed(width: 200) {
-              ...GatsbyImageSharpFixed
             }
           }
         }
@@ -61,7 +53,7 @@ const ProjectPageLayout = ({pageContext, children}) => {
         <AliceCarousel infinite autoWidth autoPlay autoPlayInterval="3000">
         {data.allFile.edges.filter(
             ({node}) => node.relativeDirectory.match(pageContext.frontmatter.title)
-            ).map(({node}) => <Img key={node.id} fluid={node.childImageSharp.fluid} style={{maxWidth: 360}}/>)}
+            ).map(({node}) => <Col align="center"><GatsbyImage image={getImage(node)}/></Col>)}
         </AliceCarousel> 
       )}
     />

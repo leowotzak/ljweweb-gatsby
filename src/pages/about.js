@@ -1,8 +1,8 @@
 import React, { useContext } from "react"
 import { PageLayout, PageTitle } from "../components"
-import { Container, Row, Col, Image } from "react-bootstrap"
+import { Container, Image } from "react-bootstrap"
 import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { ThemeContext, SEO } from "../utils"
 
 export default ({ data }) => {
@@ -28,13 +28,15 @@ export default ({ data }) => {
   const bookLinks = readingList.map(book => MediaLink(book))
   const movieLinks = movieList.map(show => MediaLink(show))
   const techStack = data.allFile.edges
-  console.log(techStack)
 
   return (
     <PageLayout>
       <SEO title="About Me" />
       <PageTitle title="About Me" />
       <Container>
+        {/* <StaticImage image={`../../icons/lion-${toString()}.png`} alt={author} width={200}/> */}
+
+
         <Image
           rounded
           width="200"
@@ -62,16 +64,9 @@ export default ({ data }) => {
             been up to!
           </p>
         </article>
-            <Image key={"javascript"} src="../../icons/javascript.png" style={{maxWidth: 100}}/>
-            <Image key={"react"} src="../../icons/react.png" style={{maxWidth: 100}}/>
-            <Image key={"gatsby"} src="../../icons/gatsby.png" style={{maxWidth: 100}}/>
-            <Image key={"python"} src="../../icons/python.png" style={{maxWidth: 100}}/>
-            <Image key={"graphql"} src="../../icons/graphql.png" style={{maxWidth: 100}}/>
-
-            {/* {techStack.map(({node}) => (
-              // console.log(node.childImageSharp.fluid)
-              // <Img fluid={node.childImageSharp.fluid} />
-            ))} */}
+            {techStack.map(({node}) => (
+              <GatsbyImage className="m-2" key={node.id} alt={node.name} image={getImage(node)} />
+            ))}
         <article className="w-75 m-auto">
           {unemployed && (
             <>
@@ -121,19 +116,13 @@ export const query = graphql`
     ) {
       edges {
         node {
+          id
+          name
           childImageSharp {
-            id
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 100)
           }
           relativeDirectory
         }
-      }
-    }
-    imageSharp {
-      fixed(width: 400) {
-        ...GatsbyImageSharpFixed
       }
     }
     site {

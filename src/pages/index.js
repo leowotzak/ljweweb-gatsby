@@ -13,10 +13,8 @@ export default ({ data }) => {
     <PageLayout>
       <SEO title="Home" />
       <Container className="text-center pt-5 mt-5" fluid>
-
         <Image
           width="300"
-          fluid
           src={dark ? `../../icons/lion-dark.png` : `../../icons/lion-light.png`}
           alt={dark ? "Darth Vader" : "R2-D2"}
         />

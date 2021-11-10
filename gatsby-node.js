@@ -22,37 +22,3 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     }
   }
 }
-
-// exports.createPages = async ({ graphql, actions }) => {
-//   // graphql function call returns a promise
-//   const { createPage } = actions
-//   const result = await graphql(`
-//     query {
-//       allMarkdownRemark {
-//         edges {
-//           node {
-//             fields {
-//               slug
-//               templatePath
-//             }
-//           }
-//         }
-//       }
-//     }
-//   `)
-
-//   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-//     const contentType = node.fields.slug.split(`/`)[1]
-//     if (requiresTemplate.includes(contentType)) {
-//       createPage({
-//         path: node.fields.slug,
-//         component: path.resolve(node.fields.templatePath),
-//         context: {
-//           //   Data passed to context is available in page queries as graphql variables
-//           slug: node.fields.slug,
-//           templatePath: node.fields.templatePath,
-//         },
-//       })
-//     }
-//   })
-// }
