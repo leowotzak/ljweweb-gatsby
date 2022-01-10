@@ -9,16 +9,21 @@ export default () => {
   const { dark, toggleDark, toString } = useContext(ThemeContext)
   return (
     <Navbar variant={toString()} fixed="top" collapseOnSelect expand="md">
-      <Col xs={1}>
-      </Col>
-      <Col style={{direction: 'flex', flexDirection: "column", alignItems: 'center'}}>
-      <Navbar.Brand className="pl-5 ml-5" as={Link} to="/">
-      <FontAwesomeIcon
-          icon={["fas", "home"]}
-          className={`brand-icon ${dark ? "empire" : "rebel"}`}
-          title="Home"
-        />
-      </Navbar.Brand>
+      <Col xs={1}></Col>
+      <Col
+        style={{
+          direction: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Navbar.Brand className="pl-5 ml-5" as={Link} to="/">
+          <FontAwesomeIcon
+            icon={["fas", "home"]}
+            className={`brand-icon ${dark ? "empire" : "rebel"}`}
+            title="Home"
+          />
+        </Navbar.Brand>
       </Col>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse
@@ -34,6 +39,9 @@ export default () => {
           </Nav.Link>
           <Nav.Link className="ml-2" as={Link} to="/resume" title="Resume">
             Resume
+          </Nav.Link>
+          <Nav.Link className="ml-2" as={Link} to="/blog" title="Blog">
+            Blog
           </Nav.Link>
           <Form className="ml-3 my-auto">
             <Form.Check
