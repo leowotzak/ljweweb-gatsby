@@ -19,13 +19,7 @@ export default ({ data }) => {
     <PageLayout>
       <SEO title="Blog" />
       <PageTitle title="Blog" />
-      <Container>
-        <section>
-          {allProjects.map(({ node }) => (
-            <p>{node.id}</p>
-          ))}
-        </section>
-      </Container>
+      <Container></Container>
     </PageLayout>
   )
 }
@@ -45,6 +39,7 @@ export const query = graphql`
             tags
           }
           slug
+          html
           id
         }
       }
