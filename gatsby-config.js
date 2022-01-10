@@ -90,7 +90,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 500,              
+              maxWidth: 500,
             },
           },
         ],
@@ -127,6 +127,12 @@ module.exports = {
       options: {
         color: `tomato`,
         showSpinner: true,
+      },
+    },
+    {
+      resolve: `gatsby-source-medium`,
+      options: {
+        username: `@leojwotzak`,
       },
     },
   ],
