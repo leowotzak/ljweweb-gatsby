@@ -38,7 +38,6 @@ export default ({ data }) => {
       <Container>
         {/* <StaticImage image={`../../icons/lion-${toString()}.png`} alt={author} width={200}/> */}
 
-
         <Image
           rounded
           width="200"
@@ -69,11 +68,12 @@ export default ({ data }) => {
             ))}
           ></AliceCarousel>
           <p className="i-5 mt-4 pt-2">
-            Hello! My name is <b>{`${author}`}</b>. I am an experienced&nbsp;<b>{occupation}</b> 
-            with a proven track record of designing, developing, and implementing
-            applications and solutions using a range of technologies and
-            languages. I seek to leverage my development experience and hands-on technical
-            expertise in a challenging role as a <b>{occupation}</b>.
+            Hello! My name is <b>{`${author}`}</b>. I am an experienced&nbsp;
+            <b>{occupation}</b>&nbsp;with a proven track record of designing,
+            developing, and implementing applications and solutions using a
+            range of technologies and languages. I seek to leverage my
+            development experience and hands-on technical expertise in a
+            challenging role as a <b>{occupation}</b>.
           </p>
           <p align="center">
             Check out my <Link to="/projects">projects</Link> to see what I've
@@ -105,8 +105,10 @@ export default ({ data }) => {
           <h5 className="watch-list-title pt-4">
             Here are a couple of books from my reading list:
           </h5>
-          <ul style={{ fontSize: "0.9rem", listStyle: "none", paddingLeft: 0 }}>{bookLinks}</ul>
-            <i>...and</i>
+          <ul style={{ fontSize: "0.9rem", listStyle: "none", paddingLeft: 0 }}>
+            {bookLinks}
+          </ul>
+          <i>...and</i>
           <h5 className="watch-list-title pt-4">
             Here are a couple of movies from my watch list:
           </h5>
