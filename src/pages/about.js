@@ -4,6 +4,8 @@ import { Container, Image } from "react-bootstrap"
 import { Link, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { ThemeContext, SEO } from "../utils"
+import AliceCarousel from "react-alice-carousel"
+import "react-alice-carousel/lib/alice-carousel.css"
 
 export default ({ data }) => {
   const MediaLink = ({ title, author, link }) => (
@@ -52,6 +54,20 @@ export default ({ data }) => {
               </span>
             ))}
           </p>
+          <AliceCarousel
+            infinite
+            autoWidth
+            autoHeight
+            autoPlay
+            disableButtonsControls
+            disableDotsControls
+            animationDuration={2000}
+            animationEasingFunction={"linear"}
+            autoPlayInterval={0}
+            items={techStack.map(({ node }) => (
+              <GatsbyImage className="m-3 sliderimg" image={getImage(node)} />
+            ))}
+          ></AliceCarousel>
           <p className="i-5 mt-4 pt-2">
             Hello! My name is <b>{`${author}`}</b>. I am an experienced&nbsp;<b>{occupation}</b> 
             with a proven track record of designing, developing, and implementing
@@ -64,9 +80,6 @@ export default ({ data }) => {
             been up to!
           </p>
         </article>
-            {techStack.map(({node}) => (
-              <GatsbyImage className="m-2" key={node.id} alt={node.name} image={getImage(node)} />
-            ))}
         <article className="w-75 m-auto">
           {unemployed && (
             <>
@@ -119,7 +132,7 @@ export const query = graphql`
           id
           name
           childImageSharp {
-            gatsbyImageData(width: 100)
+            gatsbyImageData(width: 130)
           }
           relativeDirectory
         }
