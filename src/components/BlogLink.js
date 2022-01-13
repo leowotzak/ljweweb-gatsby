@@ -1,18 +1,32 @@
 import React from "react"
-import { Link } from "gatsby"
-import Img from "gatsby-image"
-import Card from "react-bootstrap/Card"
+import { Card, Button, Badge, Col } from "react-bootstrap"
 
-export default props => {
+export default ({ excerpt, frontmatter, featuredImages }) => {
   return (
-    <Card className="card-container" as={Link} to={props.to}>
-      <Card.Body className="pt-3">
-        <Card.Title>
-          <h4>Test</h4>
-        </Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">Test</Card.Subtitle>
-        <Card.Text>Test</Card.Text>
-      </Card.Body>
-    </Card>
+    <Col width={6}>
+      {console.log(featuredImages)}
+      <Card style={{ width: "18rem" }}>
+        <a href={frontmatter.link} target="_blank" rel="noopener noreferrer">
+          <Card.Img
+            variant="bottom"
+            src="https://miro.medium.com/max/1400/0*W-_nOxyZ526xE206"
+          />
+          <Card.Body>
+            <Card.Title>
+              {frontmatter.title}
+              <hr />
+              <Card.Subtitle>{excerpt}</Card.Subtitle>
+              <hr />
+
+              {frontmatter.tags.map(tag => (
+                <Badge key={tag} pill variant="dark" className="px-2 mr-1">
+                  {tag}
+                </Badge>
+              ))}
+            </Card.Title>
+          </Card.Body>
+        </a>
+      </Card>
+    </Col>
   )
 }

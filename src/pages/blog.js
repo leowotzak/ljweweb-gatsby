@@ -1,8 +1,8 @@
 import React, { useContext } from "react"
 import { graphql } from "gatsby"
-import { PageLayout, PageTitle, ProjectLink } from "../components"
+import { PageLayout, PageTitle, BlogLink } from "../components"
 import ThemeContext from "../utils/theme"
-import { Image } from "react-bootstrap"
+import { Image, Row } from "react-bootstrap"
 import { SEO, Utils } from "../utils"
 import Container from "react-bootstrap/Container"
 
@@ -19,7 +19,9 @@ export default ({ data }) => {
     <PageLayout>
       <SEO title="Blog" />
       <PageTitle title="Blog" />
-      <Container></Container>
+      <Container align="center">
+        <Row>{allProjects.map(({ node }) => BlogLink(node))}</Row>
+      </Container>
     </PageLayout>
   )
 }
@@ -37,6 +39,7 @@ export const query = graphql`
           frontmatter {
             title
             tags
+            link
           }
           slug
           html
