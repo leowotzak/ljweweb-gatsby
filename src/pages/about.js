@@ -55,6 +55,11 @@ export default ({ data }) => {
               image={getImage(node)}
             />
           ))}
+          responsive={{
+            0: { items: 3 },
+            512: { items: 4 },
+            1024: { items: 5 },
+          }}
         />
         <Image
           rounded
@@ -72,20 +77,6 @@ export default ({ data }) => {
               </span>
             ))}
           </p>
-          <AliceCarousel
-            infinite
-            autoWidth
-            autoHeight
-            autoPlay
-            disableButtonsControls
-            disableDotsControls
-            animationDuration={2000}
-            animationEasingFunction={"linear"}
-            autoPlayInterval={0}
-            items={techStack.map(({ node }) => (
-              <GatsbyImage className="m-3 sliderimg" image={getImage(node)} />
-            ))}
-          ></AliceCarousel>
           <p className="i-5 mt-4 pt-2">
             Hello! My name is <b>{`${author}`}</b>. I am an experienced&nbsp;
             <b>{occupation}</b>&nbsp;with a proven track record of designing,
