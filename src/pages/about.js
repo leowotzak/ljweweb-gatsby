@@ -37,10 +37,29 @@ export default ({ data }) => {
       <PageTitle title="About Me" />
       <Container>
         {/* <StaticImage image={`../../icons/lion-${toString()}.png`} alt={author} width={200}/> */}
-
+        <AliceCarousel
+          infinite
+          autoWidth
+          autoHeight
+          autoPlay
+          disableButtonsControls
+          disableDotsControls
+          animationDuration={2000}
+          animationEasingFunction={"linear"}
+          autoPlayInterval={0}
+          items={techStack.map(({ node }, idx) => (
+            <GatsbyImage
+              className="sliderimg"
+              key={idx}
+              alt={toString(idx)}
+              image={getImage(node)}
+            />
+          ))}
+        />
         <Image
           rounded
           width="200"
+          className="mt-2"
           src={`../../icons/lion-${toString()}.png`}
           alt={author}
         />
@@ -53,20 +72,6 @@ export default ({ data }) => {
               </span>
             ))}
           </p>
-          <AliceCarousel
-            infinite
-            autoWidth
-            autoHeight
-            autoPlay
-            disableButtonsControls
-            disableDotsControls
-            animationDuration={2000}
-            animationEasingFunction={"linear"}
-            autoPlayInterval={0}
-            items={techStack.map(({ node }) => (
-              <GatsbyImage className="m-3 sliderimg" image={getImage(node)} />
-            ))}
-          ></AliceCarousel>
           <p className="i-5 mt-4 pt-2">
             Hello! My name is <b>{`${author}`}</b>. I am an experienced&nbsp;
             <b>{occupation}</b>&nbsp;with a proven track record of designing,
