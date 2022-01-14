@@ -37,10 +37,29 @@ export default ({ data }) => {
       <PageTitle title="About Me" />
       <Container>
         {/* <StaticImage image={`../../icons/lion-${toString()}.png`} alt={author} width={200}/> */}
-
+        <AliceCarousel
+          infinite
+          autoWidth
+          autoHeight
+          autoPlay
+          disableButtonsControls
+          disableDotsControls
+          animationDuration={2000}
+          animationEasingFunction={"linear"}
+          autoPlayInterval={0}
+          items={techStack.map(({ node }, idx) => (
+            <GatsbyImage
+              className="sliderimg"
+              key={idx}
+              alt={toString(idx)}
+              image={getImage(node)}
+            />
+          ))}
+        />
         <Image
           rounded
           width="200"
+          className="mt-2"
           src={`../../icons/lion-${toString()}.png`}
           alt={author}
         />
