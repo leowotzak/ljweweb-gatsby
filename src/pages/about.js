@@ -39,8 +39,6 @@ export default ({ data }) => {
         {/* <StaticImage image={`../../icons/lion-${toString()}.png`} alt={author} width={200}/> */}
         <AliceCarousel
           infinite
-          autoWidth
-          autoHeight
           autoPlay
           disableButtonsControls
           disableDotsControls
