@@ -24,12 +24,8 @@ module.exports = {
     ],
     siteUrl:
       process.env.URL || process.env.DEPLOY_URL || `https://localhost:8000`,
-    unemployed: true,
-    designations: [
-      `Full stack developer`,
-      `Experienced programmer`,
-      `Finance & trading enthusiast`,
-    ],
+    unemployed: false,
+    designations: [`Full stack developer`, `Sports fanatic`, `Blogger`],
     readingList: [
       {
         title: `Napoleon: a life`,
