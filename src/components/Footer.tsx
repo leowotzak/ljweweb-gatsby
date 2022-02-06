@@ -1,8 +1,9 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-export default () => {
-  const { author } = useStaticQuery(query).site.siteMetadata
+export const Footer: React.FC = () => {
+  const { author }: { author: string } = useStaticQuery(query).site.siteMetadata
+
   return (
     <div className="footer text-muted text-center">
       <span className="m-auto">
@@ -13,8 +14,9 @@ export default () => {
     </div>
   )
 }
-const query = graphql`
-  query Author {
+
+const query: void = graphql`
+  query OtherAuthor {
     site {
       siteMetadata {
         author
@@ -22,3 +24,5 @@ const query = graphql`
     }
   }
 `
+
+export default Footer
