@@ -2,18 +2,16 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d5aef605-d961-4c6c-9285-14992f1dcb61/deploy-status)](https://app.netlify.com/sites/boring-lovelace-564f37/deploys)
 
-Website currently supports a landing, about, all projects, resume, and individual project pages. The site has custom styling, and the individual projects pages and the resume page are created using `MDX` (markdown for `JSX/React`). The backend of the website is supported by a `GraphQL` database, which the site queries for its content.
+Website currently supports a landing, about, resume, and blog pages. The backend of the website is supported by a `GraphQL` database, which the site queries for its content.
 
 * `React Context`
 * `GraphQL`
 * `Bootstrap`
 * `Sass`
 * `SEO`
-* `MDX`
 
 ## Extra features
 
-* Dynamically created individual project pages from `MDX` files
 * Dark mode slider
 * Sound effects
 * Locally hosted font `Aurebesh`
@@ -22,8 +20,8 @@ Website currently supports a landing, about, all projects, resume, and individua
 ## The file structure is as follows
 
 - **Components**: Re-usable components to be used throughout the app
-- **Content**: Contains relevant `Markdown` & `MDX` files and images for projects & resume
-- **Templates**: Contains files that create the template html for a project details page
+- **Content**: Contains relevant `Markdown` & `MDX` files and images for blog & resume
+- **Templates**: Contains files that create the template html for a blog details page
 - **Styles**: Contains the sass files used for adding custom styling to the app
 - **Utils**: Contains helper files, seo, and theme management
 - **Pages**: Contains the different pages
@@ -42,8 +40,6 @@ Website currently supports a landing, about, all projects, resume, and individua
 - `gatsby-plugin-preload-link-crossorigin`,
 - `gatsby-plugin-catch-links`,
 - `gatsby-source-filesystem`
-- `gatsby-plugin-mdx`
-- `gatsby-plugin-mdx-frontmatter`
 - `gatsby-plugin-page-creator`
 - `gatsby-plugin-sass`
 - `gatsby-plugin-image`
@@ -55,7 +51,3 @@ Website currently supports a landing, about, all projects, resume, and individua
 - `gatsby-plugin-react-helmet`
 - `gatsby-plugin-google-fonts`
 - `gatsby-plugin-nprogress`
-
-### Credits
-
-Based off [gatsby-personal-site-template](https://github.com/surudhb/gatsby-personal-site-template).

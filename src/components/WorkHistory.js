@@ -3,8 +3,6 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { Container, Row, Col, Badge } from "react-bootstrap"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-
-
 const CompanyCard = ({ frontmatter, image }) => {
   const { company, position, startDate, endDate, location } = frontmatter
 
@@ -33,20 +31,23 @@ const CompanyCard = ({ frontmatter, image }) => {
 
 export default ({ body, frontmatter, image }) => {
   return (
+    // FIXME rename this css class
     <Container className="p-1 project-link text-center">
       <Row>
         <Col className="col-md-4 col-12">
           <CompanyCard frontmatter={frontmatter} image={image} />
         </Col>
-        <Col style={{textAlign: "left"}}>
+        <Col style={{ textAlign: "left" }}>
           <MDXRenderer>{body}</MDXRenderer>
         </Col>
       </Row>
-            {frontmatter.tags.map(tag => (
-              <Badge key={tag} pill className="pt-2 mx-1 resume-tags">
-                    <small><h5>{tag}</h5></small>
-              </Badge>
-            ))}
+      {frontmatter.tags.map(tag => (
+        <Badge key={tag} pill className="pt-2 mx-1 resume-tags">
+          <small>
+            <h5>{tag}</h5>
+          </small>
+        </Badge>
+      ))}
     </Container>
   )
 }
