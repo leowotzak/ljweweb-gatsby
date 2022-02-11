@@ -83,10 +83,6 @@ export default ({ data }) => {
             development experience and hands-on technical expertise in a
             challenging role as a <b>{occupation}</b>.
           </p>
-          <p align="center">
-            Check out my <Link to="/projects">projects</Link> to see what I've
-            been up to!
-          </p>
         </article>
         <article className="w-75 m-auto">
           {unemployed && (

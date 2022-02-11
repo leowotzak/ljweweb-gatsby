@@ -13,15 +13,7 @@ module.exports = {
     lastName: `Wotzak`,
     description: `Leo Wotzak's personal website`,
     occupation: `Full Stack Developer`,
-    keywords: [
-      `Leo`,
-      `Wotzak`,
-      `Personal`,
-      `Resume`,
-      `Portfolio`,
-      `Projects`,
-      `Work`,
-    ],
+    keywords: [`Leo`, `Wotzak`, `Personal`, `Resume`, `Portfolio`, `Work`],
     siteUrl:
       process.env.URL || process.env.DEPLOY_URL || `https://localhost:8000`,
     unemployed: true,
@@ -83,20 +75,6 @@ module.exports = {
       },
     },
     `gatsby-remark-images`,
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 500,
-            },
-          },
-        ],
-        extensions: [`.mdx`, `.md`],
-      },
-    },
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
