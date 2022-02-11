@@ -1,9 +1,9 @@
-import React from "react"
+import React, {ReactNode} from "react"
 import { Container } from "react-bootstrap"
 import Header from "./Header"
 import Footer from "./Footer"
 
-export default ({ children }) => (
+export default ({ children }: {children: ReactNode}) => (
   <Container fluid className="px-0 theme-light app-container">
     <Header />
     <Container fluid className="pt-5 mt-5 text-center min-vh-100">
