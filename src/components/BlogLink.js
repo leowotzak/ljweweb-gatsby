@@ -2,21 +2,28 @@ import React from "react"
 import { Card, Container, Badge, Col, Row } from "react-bootstrap"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-export default ({ title, createdAt, virtuals, uniqueSlug }, idx) => {
+export default (
+  { title, createdAt, virtuals, slug, uniqueSlug },
+  idx,
+  featuredImages
+) => {
   console.log(uniqueSlug)
   return (
     <Container>
       <Row style={{ justifyContent: "center", alignItems: "center" }}>
         <Col lg={4}>
-          <img
-            src="https://rustacean.net/assets/rustacean-flat-happy.png"
-            style={{ maxWidth: "280px" }}
-          />
+          {featuredImages.map((image, index) => (
+            <GatsbyImage
+              key={image}
+              alt={toString(index)}
+              image={getImage(image)}
+            />
+          ))}
         </Col>
-        <Col fluid>
-          <a href={`https://towardsdev.com/${uniqueSlug}`}>
+        <Col>
+          <a href={`https://medium.com/@leojwotzak/${uniqueSlug}`}>
             <Row>
-              <Col fluid style={{ alignItems: "center" }}>
+              <Col style={{ alignItems: "center" }}>
                 <h5>
                   {idx < 1 ? <Badge variant="success">New</Badge> : <></>}
                   &nbsp;{title}

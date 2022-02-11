@@ -8,8 +8,11 @@ import Container from "react-bootstrap/Container"
 
 export default ({ data }) => {
   const allBlogPosts = data.allMediumPost.edges || []
+  const allFeaturedImages = data.allFile.edges || []
   const { dark } = useContext(ThemeContext)
-  console.log(allBlogPosts)
+  const regex = /^(.+)\/([^]+)$/
+  const featuredImageMap = Utils.getImageMap(allFeaturedImages, regex, true, 1)
+  console.log(featuredImageMap)
 
   return (
     <PageLayout>
@@ -18,7 +21,13 @@ export default ({ data }) => {
       <Container align="center">
         {allBlogPosts.map(({ node }, idx) => (
           <>
-            <section>{BlogLink(node, idx)}</section>
+            <section>
+              {BlogLink(
+                node,
+                idx,
+                featuredImageMap["content/blog/" + node.slug]
+              )}
+            </section>
             <hr />
           </>
         ))}
@@ -36,6 +45,7 @@ export const query = graphql`
           createdAt(formatString: "MMMM YYYY")
           id
           uniqueSlug
+          slug
           virtuals {
             subtitle
             socialRecommendsCount
@@ -49,6 +59,22 @@ export const query = graphql`
             recommends
             publishedInCount
           }
+        }
+      }
+    }
+    allFile(
+      filter: {
+        extension: { eq: "png" }
+        relativeDirectory: { regex: "/content/blog/" }
+      }
+    ) {
+      edges {
+        node {
+          id
+          childImageSharp {
+            gatsbyImageData(width: 500)
+          }
+          relativeDirectory
         }
       }
     }
