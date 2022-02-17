@@ -3,20 +3,12 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { Container, Row, Col, Badge } from "react-bootstrap"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-const CompanyCard = ({ frontmatter, image }) => {
+const CompanyCard = ({ frontmatter, image }: {frontmatter: any, image: any}) => {
   const { company, position, startDate, endDate, location } = frontmatter
 
   return (
     <Container fluid className="m-auto work-history">
       <GatsbyImage image={image} alt={company} />
-      {/* <Img
-        fluid={image}
-        style={{
-          maxHeight: "15vmax",
-          maxWidth: "15vmax",
-        }}
-        className="m-auto"
-      /> */}
       <div className="md-font">
         <h2 className="m-auto pt-2">{company}</h2>
         <h5 className="text-muted">{location}</h5>
@@ -29,7 +21,7 @@ const CompanyCard = ({ frontmatter, image }) => {
   )
 }
 
-export default ({ body, frontmatter, image }) => {
+export const WorkHistory = ({html, frontmatter, image}: {html: any, frontmatter: any, image: any}) => {
   return (
     // FIXME rename this css class
     <Container className="p-1 project-link text-center">
@@ -38,7 +30,7 @@ export default ({ body, frontmatter, image }) => {
           <CompanyCard frontmatter={frontmatter} image={image} />
         </Col>
         <Col style={{ textAlign: "left" }}>
-          <MDXRenderer>{body}</MDXRenderer>
+        {html}
         </Col>
       </Row>
       {frontmatter.tags.map(tag => (
@@ -51,3 +43,5 @@ export default ({ body, frontmatter, image }) => {
     </Container>
   )
 }
+
+export default WorkHistory
