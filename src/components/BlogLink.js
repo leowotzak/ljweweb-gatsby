@@ -1,8 +1,8 @@
 import React from "react"
-import { Card, Container, Badge, Col, Row } from "react-bootstrap"
+import { Container, Badge, Col, Row } from "react-bootstrap"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-export default (
+export const BlogLink = (
   { title, createdAt, virtuals, slug, uniqueSlug },
   idx,
   featuredImages
@@ -50,12 +50,10 @@ export default (
               ))}
             </Col>
           </Row>
-          {/* {console.log(virtuals.socialRecommendsCount)}
-          {console.log(virtuals.responsesCreatedCount)}
-          {console.log(virtuals.recommends)}
-          {console.log(virtuals.publishedInCount)} */}
         </Col>
       </Row>
     </Container>
   )
 }
+
+export default BlogLink

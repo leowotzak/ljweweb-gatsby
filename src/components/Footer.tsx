@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
   )
 }
 
-const query: void = graphql`
+export const query = graphql`
   query OtherAuthor {
     site {
       siteMetadata {

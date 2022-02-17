@@ -1,18 +1,14 @@
-import React, { useContext } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import { PageLayout, PageTitle, BlogLink } from "../components"
-import ThemeContext from "../utils/theme"
-import { Image, Row } from "react-bootstrap"
 import { SEO, Utils } from "../utils"
 import Container from "react-bootstrap/Container"
 
 export default ({ data }) => {
   const allBlogPosts = data.allMediumPost.edges || []
   const allFeaturedImages = data.allFile.edges || []
-  const { dark } = useContext(ThemeContext)
   const regex = /^(.+)\/([^]+)$/
   const featuredImageMap = Utils.getImageMap(allFeaturedImages, regex, true, 1)
-  console.log(featuredImageMap)
 
   return (
     <PageLayout>

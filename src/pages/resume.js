@@ -2,10 +2,9 @@ import React from "react"
 import { graphql } from "gatsby"
 import { PageLayout, PageTitle, WorkHistory } from "../components"
 import { SEO, Utils } from "../utils"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Container from "react-bootstrap/Container"
 
-export default ({ data }) => {
+export const Resume = ({ data }) => {
   const history = data.allMarkdownRemark.edges || []
   const images = data.allFile.edges || []
   const imageMap = Utils.getImageMap(images, /^(.+)\/([^]+)$/)
@@ -19,8 +18,8 @@ export default ({ data }) => {
           <div key={node.id}>
             <WorkHistory
               frontmatter={node.frontmatter}
-              image={imageMap[node.slug.replace(/\/+$/, "")]}
-              body={node.body}
+              image={imageMap[node.fields.slug.replace(/\/+$/, "")]}
+              html={node.html}
             />
             <hr className="w-75" />
           </div>
