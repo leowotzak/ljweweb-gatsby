@@ -13,16 +13,7 @@ export default ({ data }) => {
   return (
     <PageLayout>
       <SEO title="Resume" />
-      <PageTitle title="Resume">
-        &nbsp;
-        <a href="../../resume.pdf" target="_blank" download>
-          <FontAwesomeIcon
-            style={{ fontSize: "2rem" }}
-            icon={["fas", "file-download"]}
-            className="icons file"
-          />
-        </a>
-      </PageTitle>
+      <PageTitle title="Resume"></PageTitle>
       <Container className="mt-5" fluid>
         {history.map(({ node }) => (
           <div key={node.id}>
