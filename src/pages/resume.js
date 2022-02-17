@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Container from "react-bootstrap/Container"
 
 export default ({ data }) => {
-  const history = data.allMdx.edges || []
+  const history = data.allMarkdownRemark.edges || []
   const images = data.allFile.edges || []
   const imageMap = Utils.getImageMap(images, /^(.+)\/([^]+)$/)
 
@@ -49,27 +49,25 @@ export const query = graphql`
         }
       }
     }
-    allMdx(
+    allMarkdownRemark(
       sort: { fields: frontmatter___endDate, order: DESC }
       filter: { fileAbsolutePath: { regex: "/content/work/" } }
     ) {
       edges {
         node {
           id
-          slug
-          excerpt
-          body
-          internal {
-            content
-          }
+          html
           frontmatter {
             company
-            endDate(formatString: "MMMM YYYY")
-            startDate(formatString: "MMMM YYYY")
             location
+            endDate
             position
+            startDate
             tags
             title
+          }
+          fields {
+            slug
           }
         }
       }
