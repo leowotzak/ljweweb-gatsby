@@ -15,7 +15,9 @@ export default ({ data }) => {
       <Container className="text-center pt-5 mt-5" fluid>
         <Image
           width="300"
-          src={dark ? `../../icons/lion-dark.png` : `../../icons/lion-light.png`}
+          src={
+            dark ? `../../icons/lion-dark.png` : `../../icons/lion-light.png`
+          }
           alt={dark ? "Darth Vader" : "R2-D2"}
         />
         {unemployed && (
@@ -25,19 +27,21 @@ export default ({ data }) => {
         )}
         <Container className="py-0 my-0">
           <Row>
-            <Col className="d-flex" style={{flexDirection: "column", alignItems: "center"}}>
+            <Col
+              className="d-flex"
+              style={{ flexDirection: "column", alignItems: "center" }}
+            >
               <Row>
-          <h1
-            style={{
-              fontSize: "3.5rem",
-              color: "black",
-            }}
-          >
-            <span className="first-name">{firstName}</span>&nbsp;
-            <span className="last-name">{lastName}</span>
-            </h1>
-
-          </Row>
+                <h1
+                  style={{
+                    fontSize: "3.5rem",
+                    color: "black",
+                  }}
+                >
+                  <span className="first-name">{firstName}</span>&nbsp;
+                  <span className="last-name">{lastName}</span>
+                </h1>
+              </Row>
             </Col>
           </Row>
         </Container>
@@ -85,13 +89,6 @@ export default ({ data }) => {
               icon={["fas", "envelope"]}
               className="icons mail"
               title="e-mail"
-            />
-          </a>
-          <a href="../../resume.pdf" target="_blank" download>
-            <FontAwesomeIcon
-              icon={["fas", "file-alt"]}
-              className="icons file"
-              title="Resume"
             />
           </a>
         </div>
