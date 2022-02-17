@@ -6,7 +6,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import GithubLink from "../components/GithubLink"
 import "react-alice-carousel/lib/alice-carousel.css"
 
-const projectTitle = ({ frontmatter }) => (
+const blogTitle = ({ frontmatter }) => (
   <Container>
     <Row className="mt-5">
       <Col align="center">
@@ -32,7 +32,7 @@ const projectTitle = ({ frontmatter }) => (
 const BlogPageLayout = ({ pageContext, children }) => {
   return (
     <Container fluid className="pt-5 min-vh-100 w-75">
-      {projectTitle(pageContext)}
+      {blogTitle(pageContext)}
       <Row>
         <Col>{children}</Col>
       </Row>
